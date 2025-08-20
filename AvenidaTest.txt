@@ -1,0 +1,65 @@
+NOMBRE : AVENIDA-TEST
+COMENTARIO : En base a la instancia FormatoInstanciaRESCOL.txt
+VERTICES : 16
+ARISTAS_REQ : 27
+ARISTAS_NOREQ : 0
+RESTRICCIONES : 3
+NODOS_INICIALES : 3
+NODOS_TERMINO : 2
+LISTA_ARISTAS_REQ :
+bi 5 6 4 1
+bi 6 7 2 1
+bi 7 8 10 1
+bi 9 10 8 1
+bi 10 11 8 1
+bi 11 12 8 1
+uni 1 2 9 1
+uni 2 3 3 1
+uni 3 4 2 1
+uni 5 1 1 1
+uni 2 6 8 1
+uni 3 7 8 1
+uni 7 3 8 1
+uni 4 8 8 1
+uni 9 5 8 1
+uni 6 10 8 1
+uni 7 11 8 1
+uni 11 7 8 1
+uni 8 12 8 1
+uni 13 9 8 1
+uni 10 14 8 1
+uni 11 15 8 1
+uni 15 11 8 1
+uni 12 16 8 1
+uni 14 13 8 1
+uni 15 14 8 1
+uni 16 15 8 1
+LISTA_ARISTAS_NOREQ :
+CORDENADAS_NODOS :  
+23 43
+75 5
+35 89
+2 56
+64 74
+23 43
+75 5
+35 89
+2 56
+62 32
+23 43
+75 5
+35 89
+2 56
+2 56
+23 43
+RESTRICCIONES :
+1 3 5
+4 5 3
+1 3 2
+NODOS_INICIALES:
+6
+3
+5
+NODOS_TERMINO:
+1
+25
