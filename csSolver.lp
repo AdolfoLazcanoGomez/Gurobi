@@ -1,584 +1,584 @@
 \ Model ARP
 \ LP format - for model browsing. Use MPS format to capture full model detail.
 Minimize
-  38.61 x[32603,32517] + 11.42 x[31995,48797] + 115.21 x[32255,32256]
-   + 71.16 x[32005,32106] + 46.09 x[32106,32119] + 13.63 x[32676,51556]
-   + 81.6 x[32518,32353] + 45.74 x[32902,32896] + 62.41 x[32700,32719]
-   + 24.24 x[31886,31837] + 129.45 x[32253,32518] + 55.94 x[32885,32896]
-   + 43.48 x[32199,32106] + 34.15 x[32211,32144] + 34.2 x[32188,32107]
-   + 33.32 x[32353,32288] + 43.02 x[32119,32136] + 111.83 x[32912,32917]
-   + 102.52 x[32734,32896] + 71.16 x[32106,32005] + 15.54 x[32718,32719]
-   + 79.56 x[32912,32776] + 104.04 x[32434,32256] + 83.02 x[32676,32519]
-   + 15.63 x[31892,48797] + 42.19 x[32449,32460] + 11.42 x[48797,31995]
-   + 13.3 x[31995,31930] + 37.28 x[32004,31991] + 82.85 x[32490,32657]
-   + 72.73 x[32004,32119] + 39.91 x[32460,32490] + 38.43 x[32344,32270]
-   + 79.56 x[32776,32912] + 57.06 x[32917,32826] + 45.74 x[32896,32902]
-   + 33.7 x[31930,31994] + 29.36 x[32734,32718] + 39.91 x[32490,32460]
-   + 74.03 x[31951,31905] + 75.12 x[51540,32449] + 110.52 x[32501,32718]
-   + 34.29 x[31994,32046] + 14.72 x[32658,32657] + 14.04 x[51553,32657]
-   + 50.93 x[32912,32902] + 110.52 x[32718,32501] + 29.36 x[32718,32734]
-   + 62.41 x[32719,32700] + 38.6 x[32826,32751] + 39.8 x[32165,32148]
-   + 42.2 x[32700,32776] + 81.86 x[32700,32673] + 43.48 x[32106,32199]
-   + 15.44 x[32677,32676] + 37.01 x[32188,32270] + 37.01 x[32270,32188]
-   + 41.36 x[31983,31965] + 42.19 x[32460,32449] + 81.86 x[32673,32700]
-   + 41.58 x[32430,32517] + 41.58 x[32517,32430] + 12.02 x[32216,32256]
-   + 111.69 x[32460,32700] + 183.94 x[31837,32165] + 49.62 x[32619,32518]
-   + 112.94 x[32518,32733] + 24.68 x[32255,32199] + 12.02 x[32256,32216]
-   + 37.9 x[32501,32490] + 34.29 x[32046,31994] + 92.94 x[32777,32776]
-   + 37.87 x[32430,32344] + 86.68 x[31991,32136] + 34.2 x[32107,32188]
-   + 104.04 x[32256,32434] + 47.06 x[31905,31892] + 38.72 x[32684,32603]
-   + 15.54 x[32719,32718] + 25.3 x[32434,32440] + 13.63 x[51556,32676]
-   + 15.44 x[32676,32677] + 104.21 x[32255,32460] + 33.2 x[32006,31947]
-   + 42.3 x[32430,32434] + 46.05 x[32005,32004] + 35.26 x[32288,32211]
-   + 43.81 x[32709,32619] + 108.72 x[32673,32434] + 45.62 x[32144,32057]
-   + 42.2 x[32776,32700] + 24.92 x[32449,32440] + 35.61 x[32057,32006]
-   + 42.3 x[32434,32430] + 83.02 x[32519,32676] + 37.9 x[32490,32501]
-   + 38.21 x[32519,32501] + 48.28 x[32733,32734] + 112.13 x[32902,32719]
-   + 82.85 x[32657,32490] + 55.94 x[32896,32885] + 25.3 x[32440,32434]
-   + 59.97 x[32519,32518] + 24.68 x[32199,32255] + 112.13 x[32719,32902]
-   + 42.95 x[32148,32136] + 57.06 x[32826,32917] + 86.68 x[32136,31991]
-   + 71.39 x[51522,32148] + 193.2 x[31995,32005] + 43.02 x[32136,32119]
-   + 42.95 x[32136,32148] + 38.6 x[32751,32826] + 91.05 x[32733,32885]
-   + 43.91 x[32165,32253] + 38.21 x[32501,32519] + 38.61 x[32517,32603]
-   + 77.93 x[32440,51539] + 38.72 x[32603,32684] + 75.12 x[32449,51540]
-   + 48.11 x[31965,31951] + 77.93 x[51539,32440] + 38.43 x[32270,32344]
-   + 39.3 x[32684,32751] + 35.81 x[32107,32046] + 77.41 x[32440,52814]
-   + 102.52 x[32896,32734] + 111.69 x[32700,32460] + 149.58 x[31991,31837]
-   + 109.29 x[32885,32709] + 171.44 x[32199,32253] + 14.04 x[32657,51553]
-   + 77.41 x[52814,32440] + 35.81 x[32046,32107] + 14.72 x[32657,32658]
-   + 37.87 x[32344,32430] + 171.44 x[32253,32199] + 24.92 x[32440,32449]
-   + 92.94 x[32776,32777] + 111.83 x[32917,32912] + 50.93 x[32902,32912]
-   + 41.63 x[31972,31983] + 48.28 x[32734,32733] + 33.7 x[31994,31930]
-   + 71.39 x[32148,51522] + 32.86 x[31947,31886] + 104.21 x[32460,32255]
-   + 39.8 x[32148,32165] + 108.72 x[32434,32673] + 72.73 x[32119,32004]
-   + 152.08 x[31837,31972] + 13.3 x[31930,31995] + 59.97 x[32518,32519]
-   + 46.09 x[32119,32106] + 39.3 x[32751,32684] + 115.21 x[32256,32255]
+  13.3 x[31995,31930] + 81.6 x[32518,32353] + 71.39 x[32148,51522]
+   + 15.54 x[32719,32718] + 48.28 x[32734,32733] + 38.6 x[32826,32751]
+   + 24.92 x[32449,32440] + 37.87 x[32344,32430] + 79.56 x[32912,32776]
+   + 112.13 x[32719,32902] + 112.94 x[32518,32733] + 13.3 x[31930,31995]
+   + 104.21 x[32255,32460] + 37.9 x[32501,32490] + 48.28 x[32733,32734]
+   + 42.19 x[32449,32460] + 82.85 x[32657,32490] + 77.41 x[52814,32440]
+   + 111.69 x[32460,32700] + 111.83 x[32912,32917] + 50.93 x[32902,32912]
+   + 39.3 x[32684,32751] + 45.74 x[32896,32902] + 15.63 x[31892,48797]
+   + 115.21 x[32255,32256] + 37.28 x[32004,31991] + 86.68 x[32136,31991]
+   + 39.91 x[32460,32490] + 71.16 x[32005,32106] + 38.43 x[32344,32270]
+   + 35.61 x[32057,32006] + 33.2 x[32006,31947] + 86.68 x[31991,32136]
+   + 39.8 x[32165,32148] + 35.81 x[32107,32046] + 55.94 x[32885,32896]
+   + 37.01 x[32188,32270] + 13.63 x[32676,51556] + 33.7 x[31930,31994]
+   + 34.2 x[32188,32107] + 43.02 x[32119,32136] + 102.52 x[32734,32896]
+   + 15.54 x[32718,32719] + 77.41 x[32440,52814] + 111.69 x[32700,32460]
+   + 29.36 x[32718,32734] + 129.45 x[32253,32518] + 34.29 x[31994,32046]
+   + 62.41 x[32700,32719] + 43.91 x[32165,32253] + 57.06 x[32917,32826]
+   + 110.52 x[32501,32718] + 37.9 x[32490,32501] + 42.19 x[32460,32449]
+   + 34.29 x[32046,31994] + 74.03 x[31951,31905] + 59.97 x[32519,32518]
+   + 33.32 x[32353,32288] + 104.04 x[32256,32434] + 72.73 x[32119,32004]
+   + 75.12 x[51540,32449] + 24.92 x[32440,32449] + 14.04 x[51553,32657]
+   + 92.94 x[32776,32777] + 50.93 x[32912,32902] + 38.6 x[32751,32826]
+   + 39.8 x[32148,32165] + 62.41 x[32719,32700] + 43.48 x[32106,32199]
+   + 115.21 x[32256,32255] + 42.2 x[32700,32776] + 24.68 x[32199,32255]
+   + 112.13 x[32902,32719] + 29.36 x[32734,32718] + 92.94 x[32777,32776]
+   + 15.44 x[32676,32677] + 110.52 x[32718,32501] + 39.3 x[32751,32684]
+   + 37.87 x[32430,32344] + 38.21 x[32501,32519] + 77.93 x[51539,32440]
+   + 81.86 x[32673,32700] + 59.97 x[32518,32519] + 48.11 x[31965,31951]
+   + 39.91 x[32490,32460] + 49.62 x[32619,32518] + 25.3 x[32434,32440]
+   + 91.05 x[32733,32885] + 12.02 x[32216,32256] + 42.3 x[32434,32430]
+   + 11.42 x[31995,48797] + 15.44 x[32677,32676] + 108.72 x[32673,32434]
+   + 25.3 x[32440,32434] + 42.3 x[32430,32434] + 45.62 x[32144,32057]
+   + 111.83 x[32917,32912] + 57.06 x[32826,32917] + 43.02 x[32136,32119]
+   + 83.02 x[32519,32676] + 47.06 x[31905,31892] + 33.7 x[31994,31930]
+   + 81.86 x[32700,32673] + 83.02 x[32676,32519] + 46.05 x[32005,32004]
+   + 35.26 x[32288,32211] + 38.21 x[32519,32501] + 38.72 x[32684,32603]
+   + 34.15 x[32211,32144] + 79.56 x[32776,32912] + 11.42 x[48797,31995]
+   + 32.86 x[31947,31886] + 152.08 x[31837,31972] + 42.2 x[32776,32700]
+   + 82.85 x[32490,32657] + 38.61 x[32517,32603] + 46.09 x[32119,32106]
+   + 14.04 x[32657,51553] + 37.01 x[32270,32188] + 55.94 x[32896,32885]
+   + 13.63 x[51556,32676] + 41.58 x[32430,32517] + 42.95 x[32148,32136]
+   + 71.39 x[51522,32148] + 24.24 x[31886,31837] + 14.72 x[32658,32657]
+   + 109.29 x[32885,32709] + 193.2 x[31995,32005] + 42.95 x[32136,32148]
+   + 43.48 x[32199,32106] + 149.58 x[31991,31837] + 171.44 x[32199,32253]
+   + 41.58 x[32517,32430] + 43.81 x[32709,32619] + 35.81 x[32046,32107]
+   + 14.72 x[32657,32658] + 71.16 x[32106,32005] + 38.61 x[32603,32517]
+   + 77.93 x[32440,51539] + 41.36 x[31983,31965] + 12.02 x[32256,32216]
+   + 183.94 x[31837,32165] + 104.04 x[32434,32256] + 104.21 x[32460,32255]
+   + 108.72 x[32434,32673] + 72.73 x[32004,32119] + 102.52 x[32896,32734]
+   + 46.09 x[32106,32119] + 38.43 x[32270,32344] + 24.68 x[32255,32199]
+   + 34.2 x[32107,32188] + 75.12 x[32449,51540] + 38.72 x[32603,32684]
+   + 41.63 x[31972,31983] + 171.44 x[32253,32199] + 45.74 x[32902,32896]
 Subject To
  VisitarTodosArcos[32518,32353]: x[32518,32353] >= 1
- VisitarTodosArcos[31886,31837]: x[31886,31837] >= 1
- VisitarTodosArcos[32253,32518]: x[32253,32518] >= 1
- VisitarTodosArcos[32211,32144]: x[32211,32144] >= 1
- VisitarTodosArcos[32353,32288]: x[32353,32288] >= 1
+ VisitarTodosArcos[32518,32733]: x[32518,32733] >= 1
  VisitarTodosArcos[31892,48797]: x[31892,48797] >= 1
  VisitarTodosArcos[32004,31991]: x[32004,31991] >= 1
- VisitarTodosArcos[31951,31905]: x[31951,31905] >= 1
- VisitarTodosArcos[31983,31965]: x[31983,31965] >= 1
- VisitarTodosArcos[31837,32165]: x[31837,32165] >= 1
- VisitarTodosArcos[32619,32518]: x[32619,32518] >= 1
- VisitarTodosArcos[32518,32733]: x[32518,32733] >= 1
- VisitarTodosArcos[31905,31892]: x[31905,31892] >= 1
+ VisitarTodosArcos[32057,32006]: x[32057,32006] >= 1
  VisitarTodosArcos[32006,31947]: x[32006,31947] >= 1
+ VisitarTodosArcos[32253,32518]: x[32253,32518] >= 1
+ VisitarTodosArcos[32165,32253]: x[32165,32253] >= 1
+ VisitarTodosArcos[31951,31905]: x[31951,31905] >= 1
+ VisitarTodosArcos[32353,32288]: x[32353,32288] >= 1
+ VisitarTodosArcos[31965,31951]: x[31965,31951] >= 1
+ VisitarTodosArcos[32619,32518]: x[32619,32518] >= 1
+ VisitarTodosArcos[32733,32885]: x[32733,32885] >= 1
+ VisitarTodosArcos[32144,32057]: x[32144,32057] >= 1
+ VisitarTodosArcos[31905,31892]: x[31905,31892] >= 1
  VisitarTodosArcos[32005,32004]: x[32005,32004] >= 1
  VisitarTodosArcos[32288,32211]: x[32288,32211] >= 1
- VisitarTodosArcos[32709,32619]: x[32709,32619] >= 1
- VisitarTodosArcos[32144,32057]: x[32144,32057] >= 1
- VisitarTodosArcos[32057,32006]: x[32057,32006] >= 1
- VisitarTodosArcos[31995,32005]: x[31995,32005] >= 1
- VisitarTodosArcos[32733,32885]: x[32733,32885] >= 1
- VisitarTodosArcos[32165,32253]: x[32165,32253] >= 1
- VisitarTodosArcos[31965,31951]: x[31965,31951] >= 1
- VisitarTodosArcos[31991,31837]: x[31991,31837] >= 1
- VisitarTodosArcos[32885,32709]: x[32885,32709] >= 1
- VisitarTodosArcos[31972,31983]: x[31972,31983] >= 1
+ VisitarTodosArcos[32211,32144]: x[32211,32144] >= 1
  VisitarTodosArcos[31947,31886]: x[31947,31886] >= 1
  VisitarTodosArcos[31837,31972]: x[31837,31972] >= 1
- VisitarTodosArcosBidireccionales[32603,32517,32517,32603]: x[32603,32517]
-   + x[32517,32603] >= 1
- VisitarTodosArcosBidireccionales[31995,48797,48797,31995]: x[31995,48797]
-   + x[48797,31995] >= 1
+ VisitarTodosArcos[31886,31837]: x[31886,31837] >= 1
+ VisitarTodosArcos[32885,32709]: x[32885,32709] >= 1
+ VisitarTodosArcos[31995,32005]: x[31995,32005] >= 1
+ VisitarTodosArcos[31991,31837]: x[31991,31837] >= 1
+ VisitarTodosArcos[32709,32619]: x[32709,32619] >= 1
+ VisitarTodosArcos[31983,31965]: x[31983,31965] >= 1
+ VisitarTodosArcos[31837,32165]: x[31837,32165] >= 1
+ VisitarTodosArcos[31972,31983]: x[31972,31983] >= 1
+ VisitarTodosArcosBidireccionales[31995,31930,31930,31995]: x[31995,31930]
+   + x[31930,31995] >= 1
+ VisitarTodosArcosBidireccionales[32148,51522,51522,32148]: x[32148,51522]
+   + x[51522,32148] >= 1
+ VisitarTodosArcosBidireccionales[32719,32718,32718,32719]: x[32719,32718]
+   + x[32718,32719] >= 1
+ VisitarTodosArcosBidireccionales[32734,32733,32733,32734]: x[32734,32733]
+   + x[32733,32734] >= 1
+ VisitarTodosArcosBidireccionales[32826,32751,32751,32826]: x[32826,32751]
+   + x[32751,32826] >= 1
+ VisitarTodosArcosBidireccionales[32449,32440,32440,32449]: x[32449,32440]
+   + x[32440,32449] >= 1
+ VisitarTodosArcosBidireccionales[32344,32430,32430,32344]: x[32344,32430]
+   + x[32430,32344] >= 1
+ VisitarTodosArcosBidireccionales[32912,32776,32776,32912]: x[32912,32776]
+   + x[32776,32912] >= 1
+ VisitarTodosArcosBidireccionales[32719,32902,32902,32719]: x[32719,32902]
+   + x[32902,32719] >= 1
+ VisitarTodosArcosBidireccionales[31930,31995,31995,31930]: x[31995,31930]
+   + x[31930,31995] >= 1
+ VisitarTodosArcosBidireccionales[32255,32460,32460,32255]: x[32255,32460]
+   + x[32460,32255] >= 1
+ VisitarTodosArcosBidireccionales[32501,32490,32490,32501]: x[32501,32490]
+   + x[32490,32501] >= 1
+ VisitarTodosArcosBidireccionales[32733,32734,32734,32733]: x[32734,32733]
+   + x[32733,32734] >= 1
+ VisitarTodosArcosBidireccionales[32449,32460,32460,32449]: x[32449,32460]
+   + x[32460,32449] >= 1
+ VisitarTodosArcosBidireccionales[32657,32490,32490,32657]: x[32657,32490]
+   + x[32490,32657] >= 1
+ VisitarTodosArcosBidireccionales[52814,32440,32440,52814]: x[52814,32440]
+   + x[32440,52814] >= 1
+ VisitarTodosArcosBidireccionales[32460,32700,32700,32460]: x[32460,32700]
+   + x[32700,32460] >= 1
+ VisitarTodosArcosBidireccionales[32912,32917,32917,32912]: x[32912,32917]
+   + x[32917,32912] >= 1
+ VisitarTodosArcosBidireccionales[32902,32912,32912,32902]: x[32902,32912]
+   + x[32912,32902] >= 1
+ VisitarTodosArcosBidireccionales[32684,32751,32751,32684]: x[32684,32751]
+   + x[32751,32684] >= 1
+ VisitarTodosArcosBidireccionales[32896,32902,32902,32896]: x[32896,32902]
+   + x[32902,32896] >= 1
  VisitarTodosArcosBidireccionales[32255,32256,32256,32255]: x[32255,32256]
    + x[32256,32255] >= 1
+ VisitarTodosArcosBidireccionales[32136,31991,31991,32136]: x[32136,31991]
+   + x[31991,32136] >= 1
+ VisitarTodosArcosBidireccionales[32460,32490,32490,32460]: x[32460,32490]
+   + x[32490,32460] >= 1
  VisitarTodosArcosBidireccionales[32005,32106,32106,32005]: x[32005,32106]
    + x[32106,32005] >= 1
- VisitarTodosArcosBidireccionales[32106,32119,32119,32106]: x[32106,32119]
-   + x[32119,32106] >= 1
- VisitarTodosArcosBidireccionales[32676,51556,51556,32676]: x[32676,51556]
-   + x[51556,32676] >= 1
- VisitarTodosArcosBidireccionales[32902,32896,32896,32902]: x[32902,32896]
-   + x[32896,32902] >= 1
- VisitarTodosArcosBidireccionales[32700,32719,32719,32700]: x[32700,32719]
-   + x[32719,32700] >= 1
+ VisitarTodosArcosBidireccionales[32344,32270,32270,32344]: x[32344,32270]
+   + x[32270,32344] >= 1
+ VisitarTodosArcosBidireccionales[31991,32136,32136,31991]: x[32136,31991]
+   + x[31991,32136] >= 1
+ VisitarTodosArcosBidireccionales[32165,32148,32148,32165]: x[32165,32148]
+   + x[32148,32165] >= 1
+ VisitarTodosArcosBidireccionales[32107,32046,32046,32107]: x[32107,32046]
+   + x[32046,32107] >= 1
  VisitarTodosArcosBidireccionales[32885,32896,32896,32885]: x[32885,32896]
    + x[32896,32885] >= 1
- VisitarTodosArcosBidireccionales[32199,32106,32106,32199]: x[32199,32106]
-   + x[32106,32199] >= 1
+ VisitarTodosArcosBidireccionales[32188,32270,32270,32188]: x[32188,32270]
+   + x[32270,32188] >= 1
+ VisitarTodosArcosBidireccionales[32676,51556,51556,32676]: x[32676,51556]
+   + x[51556,32676] >= 1
+ VisitarTodosArcosBidireccionales[31930,31994,31994,31930]: x[31930,31994]
+   + x[31994,31930] >= 1
  VisitarTodosArcosBidireccionales[32188,32107,32107,32188]: x[32188,32107]
    + x[32107,32188] >= 1
  VisitarTodosArcosBidireccionales[32119,32136,32136,32119]: x[32119,32136]
    + x[32136,32119] >= 1
- VisitarTodosArcosBidireccionales[32912,32917,32917,32912]: x[32912,32917]
-   + x[32917,32912] >= 1
  VisitarTodosArcosBidireccionales[32734,32896,32896,32734]: x[32734,32896]
    + x[32896,32734] >= 1
- VisitarTodosArcosBidireccionales[32106,32005,32005,32106]: x[32005,32106]
-   + x[32106,32005] >= 1
- VisitarTodosArcosBidireccionales[32718,32719,32719,32718]: x[32718,32719]
-   + x[32719,32718] >= 1
- VisitarTodosArcosBidireccionales[32912,32776,32776,32912]: x[32912,32776]
-   + x[32776,32912] >= 1
- VisitarTodosArcosBidireccionales[32434,32256,32256,32434]: x[32434,32256]
-   + x[32256,32434] >= 1
- VisitarTodosArcosBidireccionales[32676,32519,32519,32676]: x[32676,32519]
-   + x[32519,32676] >= 1
- VisitarTodosArcosBidireccionales[32449,32460,32460,32449]: x[32449,32460]
-   + x[32460,32449] >= 1
- VisitarTodosArcosBidireccionales[48797,31995,31995,48797]: x[31995,48797]
-   + x[48797,31995] >= 1
- VisitarTodosArcosBidireccionales[31995,31930,31930,31995]: x[31995,31930]
-   + x[31930,31995] >= 1
- VisitarTodosArcosBidireccionales[32490,32657,32657,32490]: x[32490,32657]
-   + x[32657,32490] >= 1
- VisitarTodosArcosBidireccionales[32004,32119,32119,32004]: x[32004,32119]
-   + x[32119,32004] >= 1
- VisitarTodosArcosBidireccionales[32460,32490,32490,32460]: x[32460,32490]
-   + x[32490,32460] >= 1
- VisitarTodosArcosBidireccionales[32344,32270,32270,32344]: x[32344,32270]
-   + x[32270,32344] >= 1
- VisitarTodosArcosBidireccionales[32776,32912,32912,32776]: x[32912,32776]
-   + x[32776,32912] >= 1
- VisitarTodosArcosBidireccionales[32917,32826,32826,32917]: x[32917,32826]
-   + x[32826,32917] >= 1
- VisitarTodosArcosBidireccionales[32896,32902,32902,32896]: x[32902,32896]
-   + x[32896,32902] >= 1
- VisitarTodosArcosBidireccionales[31930,31994,31994,31930]: x[31930,31994]
-   + x[31994,31930] >= 1
- VisitarTodosArcosBidireccionales[32734,32718,32718,32734]: x[32734,32718]
-   + x[32718,32734] >= 1
- VisitarTodosArcosBidireccionales[32490,32460,32460,32490]: x[32460,32490]
-   + x[32490,32460] >= 1
- VisitarTodosArcosBidireccionales[51540,32449,32449,51540]: x[51540,32449]
-   + x[32449,51540] >= 1
- VisitarTodosArcosBidireccionales[32501,32718,32718,32501]: x[32501,32718]
-   + x[32718,32501] >= 1
- VisitarTodosArcosBidireccionales[31994,32046,32046,31994]: x[31994,32046]
-   + x[32046,31994] >= 1
- VisitarTodosArcosBidireccionales[32658,32657,32657,32658]: x[32658,32657]
-   + x[32657,32658] >= 1
- VisitarTodosArcosBidireccionales[51553,32657,32657,51553]: x[51553,32657]
-   + x[32657,51553] >= 1
- VisitarTodosArcosBidireccionales[32912,32902,32902,32912]: x[32912,32902]
-   + x[32902,32912] >= 1
- VisitarTodosArcosBidireccionales[32718,32501,32501,32718]: x[32501,32718]
-   + x[32718,32501] >= 1
- VisitarTodosArcosBidireccionales[32718,32734,32734,32718]: x[32734,32718]
-   + x[32718,32734] >= 1
- VisitarTodosArcosBidireccionales[32719,32700,32700,32719]: x[32700,32719]
-   + x[32719,32700] >= 1
- VisitarTodosArcosBidireccionales[32826,32751,32751,32826]: x[32826,32751]
-   + x[32751,32826] >= 1
- VisitarTodosArcosBidireccionales[32165,32148,32148,32165]: x[32165,32148]
-   + x[32148,32165] >= 1
- VisitarTodosArcosBidireccionales[32700,32776,32776,32700]: x[32700,32776]
-   + x[32776,32700] >= 1
- VisitarTodosArcosBidireccionales[32700,32673,32673,32700]: x[32700,32673]
-   + x[32673,32700] >= 1
- VisitarTodosArcosBidireccionales[32106,32199,32199,32106]: x[32199,32106]
-   + x[32106,32199] >= 1
- VisitarTodosArcosBidireccionales[32677,32676,32676,32677]: x[32677,32676]
-   + x[32676,32677] >= 1
- VisitarTodosArcosBidireccionales[32188,32270,32270,32188]: x[32188,32270]
-   + x[32270,32188] >= 1
- VisitarTodosArcosBidireccionales[32270,32188,32188,32270]: x[32188,32270]
-   + x[32270,32188] >= 1
- VisitarTodosArcosBidireccionales[32460,32449,32449,32460]: x[32449,32460]
-   + x[32460,32449] >= 1
- VisitarTodosArcosBidireccionales[32673,32700,32700,32673]: x[32700,32673]
-   + x[32673,32700] >= 1
- VisitarTodosArcosBidireccionales[32430,32517,32517,32430]: x[32430,32517]
-   + x[32517,32430] >= 1
- VisitarTodosArcosBidireccionales[32517,32430,32430,32517]: x[32430,32517]
-   + x[32517,32430] >= 1
- VisitarTodosArcosBidireccionales[32216,32256,32256,32216]: x[32216,32256]
-   + x[32256,32216] >= 1
- VisitarTodosArcosBidireccionales[32460,32700,32700,32460]: x[32460,32700]
-   + x[32700,32460] >= 1
- VisitarTodosArcosBidireccionales[32255,32199,32199,32255]: x[32255,32199]
-   + x[32199,32255] >= 1
- VisitarTodosArcosBidireccionales[32256,32216,32216,32256]: x[32216,32256]
-   + x[32256,32216] >= 1
- VisitarTodosArcosBidireccionales[32501,32490,32490,32501]: x[32501,32490]
-   + x[32490,32501] >= 1
- VisitarTodosArcosBidireccionales[32046,31994,31994,32046]: x[31994,32046]
-   + x[32046,31994] >= 1
- VisitarTodosArcosBidireccionales[32777,32776,32776,32777]: x[32777,32776]
-   + x[32776,32777] >= 1
- VisitarTodosArcosBidireccionales[32430,32344,32344,32430]: x[32430,32344]
-   + x[32344,32430] >= 1
- VisitarTodosArcosBidireccionales[31991,32136,32136,31991]: x[31991,32136]
-   + x[32136,31991] >= 1
- VisitarTodosArcosBidireccionales[32107,32188,32188,32107]: x[32188,32107]
-   + x[32107,32188] >= 1
- VisitarTodosArcosBidireccionales[32256,32434,32434,32256]: x[32434,32256]
-   + x[32256,32434] >= 1
- VisitarTodosArcosBidireccionales[32684,32603,32603,32684]: x[32684,32603]
-   + x[32603,32684] >= 1
- VisitarTodosArcosBidireccionales[32719,32718,32718,32719]: x[32718,32719]
-   + x[32719,32718] >= 1
- VisitarTodosArcosBidireccionales[32434,32440,32440,32434]: x[32434,32440]
-   + x[32440,32434] >= 1
- VisitarTodosArcosBidireccionales[51556,32676,32676,51556]: x[32676,51556]
-   + x[51556,32676] >= 1
- VisitarTodosArcosBidireccionales[32676,32677,32677,32676]: x[32677,32676]
-   + x[32676,32677] >= 1
- VisitarTodosArcosBidireccionales[32255,32460,32460,32255]: x[32255,32460]
-   + x[32460,32255] >= 1
- VisitarTodosArcosBidireccionales[32430,32434,32434,32430]: x[32430,32434]
-   + x[32434,32430] >= 1
- VisitarTodosArcosBidireccionales[32673,32434,32434,32673]: x[32673,32434]
-   + x[32434,32673] >= 1
- VisitarTodosArcosBidireccionales[32776,32700,32700,32776]: x[32700,32776]
-   + x[32776,32700] >= 1
- VisitarTodosArcosBidireccionales[32449,32440,32440,32449]: x[32449,32440]
-   + x[32440,32449] >= 1
- VisitarTodosArcosBidireccionales[32434,32430,32430,32434]: x[32430,32434]
-   + x[32434,32430] >= 1
- VisitarTodosArcosBidireccionales[32519,32676,32676,32519]: x[32676,32519]
-   + x[32519,32676] >= 1
- VisitarTodosArcosBidireccionales[32490,32501,32501,32490]: x[32501,32490]
-   + x[32490,32501] >= 1
- VisitarTodosArcosBidireccionales[32519,32501,32501,32519]: x[32519,32501]
-   + x[32501,32519] >= 1
- VisitarTodosArcosBidireccionales[32733,32734,32734,32733]: x[32733,32734]
-   + x[32734,32733] >= 1
- VisitarTodosArcosBidireccionales[32902,32719,32719,32902]: x[32902,32719]
-   + x[32719,32902] >= 1
- VisitarTodosArcosBidireccionales[32657,32490,32490,32657]: x[32490,32657]
-   + x[32657,32490] >= 1
- VisitarTodosArcosBidireccionales[32896,32885,32885,32896]: x[32885,32896]
-   + x[32896,32885] >= 1
- VisitarTodosArcosBidireccionales[32440,32434,32434,32440]: x[32434,32440]
-   + x[32440,32434] >= 1
- VisitarTodosArcosBidireccionales[32519,32518,32518,32519]: x[32519,32518]
-   + x[32518,32519] >= 1
- VisitarTodosArcosBidireccionales[32199,32255,32255,32199]: x[32255,32199]
-   + x[32199,32255] >= 1
- VisitarTodosArcosBidireccionales[32719,32902,32902,32719]: x[32902,32719]
-   + x[32719,32902] >= 1
- VisitarTodosArcosBidireccionales[32148,32136,32136,32148]: x[32148,32136]
-   + x[32136,32148] >= 1
- VisitarTodosArcosBidireccionales[32826,32917,32917,32826]: x[32917,32826]
-   + x[32826,32917] >= 1
- VisitarTodosArcosBidireccionales[32136,31991,31991,32136]: x[31991,32136]
-   + x[32136,31991] >= 1
- VisitarTodosArcosBidireccionales[51522,32148,32148,51522]: x[51522,32148]
-   + x[32148,51522] >= 1
- VisitarTodosArcosBidireccionales[32136,32119,32119,32136]: x[32119,32136]
-   + x[32136,32119] >= 1
- VisitarTodosArcosBidireccionales[32136,32148,32148,32136]: x[32148,32136]
-   + x[32136,32148] >= 1
- VisitarTodosArcosBidireccionales[32751,32826,32826,32751]: x[32826,32751]
-   + x[32751,32826] >= 1
- VisitarTodosArcosBidireccionales[32501,32519,32519,32501]: x[32519,32501]
-   + x[32501,32519] >= 1
- VisitarTodosArcosBidireccionales[32517,32603,32603,32517]: x[32603,32517]
-   + x[32517,32603] >= 1
- VisitarTodosArcosBidireccionales[32440,51539,51539,32440]: x[32440,51539]
-   + x[51539,32440] >= 1
- VisitarTodosArcosBidireccionales[32603,32684,32684,32603]: x[32684,32603]
-   + x[32603,32684] >= 1
- VisitarTodosArcosBidireccionales[32449,51540,51540,32449]: x[51540,32449]
-   + x[32449,51540] >= 1
- VisitarTodosArcosBidireccionales[51539,32440,32440,51539]: x[32440,51539]
-   + x[51539,32440] >= 1
- VisitarTodosArcosBidireccionales[32270,32344,32344,32270]: x[32344,32270]
-   + x[32270,32344] >= 1
- VisitarTodosArcosBidireccionales[32684,32751,32751,32684]: x[32684,32751]
-   + x[32751,32684] >= 1
- VisitarTodosArcosBidireccionales[32107,32046,32046,32107]: x[32107,32046]
-   + x[32046,32107] >= 1
- VisitarTodosArcosBidireccionales[32440,52814,52814,32440]: x[32440,52814]
-   + x[52814,32440] >= 1
- VisitarTodosArcosBidireccionales[32896,32734,32734,32896]: x[32734,32896]
-   + x[32896,32734] >= 1
+ VisitarTodosArcosBidireccionales[32718,32719,32719,32718]: x[32719,32718]
+   + x[32718,32719] >= 1
+ VisitarTodosArcosBidireccionales[32440,52814,52814,32440]: x[52814,32440]
+   + x[32440,52814] >= 1
  VisitarTodosArcosBidireccionales[32700,32460,32460,32700]: x[32460,32700]
    + x[32700,32460] >= 1
- VisitarTodosArcosBidireccionales[32199,32253,32253,32199]: x[32199,32253]
-   + x[32253,32199] >= 1
+ VisitarTodosArcosBidireccionales[32718,32734,32734,32718]: x[32718,32734]
+   + x[32734,32718] >= 1
+ VisitarTodosArcosBidireccionales[31994,32046,32046,31994]: x[31994,32046]
+   + x[32046,31994] >= 1
+ VisitarTodosArcosBidireccionales[32700,32719,32719,32700]: x[32700,32719]
+   + x[32719,32700] >= 1
+ VisitarTodosArcosBidireccionales[32917,32826,32826,32917]: x[32917,32826]
+   + x[32826,32917] >= 1
+ VisitarTodosArcosBidireccionales[32501,32718,32718,32501]: x[32501,32718]
+   + x[32718,32501] >= 1
+ VisitarTodosArcosBidireccionales[32490,32501,32501,32490]: x[32501,32490]
+   + x[32490,32501] >= 1
+ VisitarTodosArcosBidireccionales[32460,32449,32449,32460]: x[32449,32460]
+   + x[32460,32449] >= 1
+ VisitarTodosArcosBidireccionales[32046,31994,31994,32046]: x[31994,32046]
+   + x[32046,31994] >= 1
+ VisitarTodosArcosBidireccionales[32519,32518,32518,32519]: x[32519,32518]
+   + x[32518,32519] >= 1
+ VisitarTodosArcosBidireccionales[32256,32434,32434,32256]: x[32256,32434]
+   + x[32434,32256] >= 1
+ VisitarTodosArcosBidireccionales[32119,32004,32004,32119]: x[32119,32004]
+   + x[32004,32119] >= 1
+ VisitarTodosArcosBidireccionales[51540,32449,32449,51540]: x[51540,32449]
+   + x[32449,51540] >= 1
+ VisitarTodosArcosBidireccionales[32440,32449,32449,32440]: x[32449,32440]
+   + x[32440,32449] >= 1
+ VisitarTodosArcosBidireccionales[51553,32657,32657,51553]: x[51553,32657]
+   + x[32657,51553] >= 1
+ VisitarTodosArcosBidireccionales[32776,32777,32777,32776]: x[32776,32777]
+   + x[32777,32776] >= 1
+ VisitarTodosArcosBidireccionales[32912,32902,32902,32912]: x[32902,32912]
+   + x[32912,32902] >= 1
+ VisitarTodosArcosBidireccionales[32751,32826,32826,32751]: x[32826,32751]
+   + x[32751,32826] >= 1
+ VisitarTodosArcosBidireccionales[32148,32165,32165,32148]: x[32165,32148]
+   + x[32148,32165] >= 1
+ VisitarTodosArcosBidireccionales[32719,32700,32700,32719]: x[32700,32719]
+   + x[32719,32700] >= 1
+ VisitarTodosArcosBidireccionales[32106,32199,32199,32106]: x[32106,32199]
+   + x[32199,32106] >= 1
+ VisitarTodosArcosBidireccionales[32256,32255,32255,32256]: x[32255,32256]
+   + x[32256,32255] >= 1
+ VisitarTodosArcosBidireccionales[32700,32776,32776,32700]: x[32700,32776]
+   + x[32776,32700] >= 1
+ VisitarTodosArcosBidireccionales[32199,32255,32255,32199]: x[32199,32255]
+   + x[32255,32199] >= 1
+ VisitarTodosArcosBidireccionales[32902,32719,32719,32902]: x[32719,32902]
+   + x[32902,32719] >= 1
+ VisitarTodosArcosBidireccionales[32734,32718,32718,32734]: x[32718,32734]
+   + x[32734,32718] >= 1
+ VisitarTodosArcosBidireccionales[32777,32776,32776,32777]: x[32776,32777]
+   + x[32777,32776] >= 1
+ VisitarTodosArcosBidireccionales[32676,32677,32677,32676]: x[32676,32677]
+   + x[32677,32676] >= 1
+ VisitarTodosArcosBidireccionales[32718,32501,32501,32718]: x[32501,32718]
+   + x[32718,32501] >= 1
+ VisitarTodosArcosBidireccionales[32751,32684,32684,32751]: x[32684,32751]
+   + x[32751,32684] >= 1
+ VisitarTodosArcosBidireccionales[32430,32344,32344,32430]: x[32344,32430]
+   + x[32430,32344] >= 1
+ VisitarTodosArcosBidireccionales[32501,32519,32519,32501]: x[32501,32519]
+   + x[32519,32501] >= 1
+ VisitarTodosArcosBidireccionales[51539,32440,32440,51539]: x[51539,32440]
+   + x[32440,51539] >= 1
+ VisitarTodosArcosBidireccionales[32673,32700,32700,32673]: x[32673,32700]
+   + x[32700,32673] >= 1
+ VisitarTodosArcosBidireccionales[32518,32519,32519,32518]: x[32519,32518]
+   + x[32518,32519] >= 1
+ VisitarTodosArcosBidireccionales[32490,32460,32460,32490]: x[32460,32490]
+   + x[32490,32460] >= 1
+ VisitarTodosArcosBidireccionales[32434,32440,32440,32434]: x[32434,32440]
+   + x[32440,32434] >= 1
+ VisitarTodosArcosBidireccionales[32216,32256,32256,32216]: x[32216,32256]
+   + x[32256,32216] >= 1
+ VisitarTodosArcosBidireccionales[32434,32430,32430,32434]: x[32434,32430]
+   + x[32430,32434] >= 1
+ VisitarTodosArcosBidireccionales[31995,48797,48797,31995]: x[31995,48797]
+   + x[48797,31995] >= 1
+ VisitarTodosArcosBidireccionales[32677,32676,32676,32677]: x[32676,32677]
+   + x[32677,32676] >= 1
+ VisitarTodosArcosBidireccionales[32673,32434,32434,32673]: x[32673,32434]
+   + x[32434,32673] >= 1
+ VisitarTodosArcosBidireccionales[32440,32434,32434,32440]: x[32434,32440]
+   + x[32440,32434] >= 1
+ VisitarTodosArcosBidireccionales[32430,32434,32434,32430]: x[32434,32430]
+   + x[32430,32434] >= 1
+ VisitarTodosArcosBidireccionales[32917,32912,32912,32917]: x[32912,32917]
+   + x[32917,32912] >= 1
+ VisitarTodosArcosBidireccionales[32826,32917,32917,32826]: x[32917,32826]
+   + x[32826,32917] >= 1
+ VisitarTodosArcosBidireccionales[32136,32119,32119,32136]: x[32119,32136]
+   + x[32136,32119] >= 1
+ VisitarTodosArcosBidireccionales[32519,32676,32676,32519]: x[32519,32676]
+   + x[32676,32519] >= 1
+ VisitarTodosArcosBidireccionales[31994,31930,31930,31994]: x[31930,31994]
+   + x[31994,31930] >= 1
+ VisitarTodosArcosBidireccionales[32700,32673,32673,32700]: x[32673,32700]
+   + x[32700,32673] >= 1
+ VisitarTodosArcosBidireccionales[32676,32519,32519,32676]: x[32519,32676]
+   + x[32676,32519] >= 1
+ VisitarTodosArcosBidireccionales[32519,32501,32501,32519]: x[32501,32519]
+   + x[32519,32501] >= 1
+ VisitarTodosArcosBidireccionales[32684,32603,32603,32684]: x[32684,32603]
+   + x[32603,32684] >= 1
+ VisitarTodosArcosBidireccionales[32776,32912,32912,32776]: x[32912,32776]
+   + x[32776,32912] >= 1
+ VisitarTodosArcosBidireccionales[48797,31995,31995,48797]: x[31995,48797]
+   + x[48797,31995] >= 1
+ VisitarTodosArcosBidireccionales[32776,32700,32700,32776]: x[32700,32776]
+   + x[32776,32700] >= 1
+ VisitarTodosArcosBidireccionales[32490,32657,32657,32490]: x[32657,32490]
+   + x[32490,32657] >= 1
+ VisitarTodosArcosBidireccionales[32517,32603,32603,32517]: x[32517,32603]
+   + x[32603,32517] >= 1
+ VisitarTodosArcosBidireccionales[32119,32106,32106,32119]: x[32119,32106]
+   + x[32106,32119] >= 1
  VisitarTodosArcosBidireccionales[32657,51553,51553,32657]: x[51553,32657]
    + x[32657,51553] >= 1
- VisitarTodosArcosBidireccionales[52814,32440,32440,52814]: x[32440,52814]
-   + x[52814,32440] >= 1
+ VisitarTodosArcosBidireccionales[32270,32188,32188,32270]: x[32188,32270]
+   + x[32270,32188] >= 1
+ VisitarTodosArcosBidireccionales[32896,32885,32885,32896]: x[32885,32896]
+   + x[32896,32885] >= 1
+ VisitarTodosArcosBidireccionales[51556,32676,32676,51556]: x[32676,51556]
+   + x[51556,32676] >= 1
+ VisitarTodosArcosBidireccionales[32430,32517,32517,32430]: x[32430,32517]
+   + x[32517,32430] >= 1
+ VisitarTodosArcosBidireccionales[32148,32136,32136,32148]: x[32148,32136]
+   + x[32136,32148] >= 1
+ VisitarTodosArcosBidireccionales[51522,32148,32148,51522]: x[32148,51522]
+   + x[51522,32148] >= 1
+ VisitarTodosArcosBidireccionales[32658,32657,32657,32658]: x[32658,32657]
+   + x[32657,32658] >= 1
+ VisitarTodosArcosBidireccionales[32136,32148,32148,32136]: x[32148,32136]
+   + x[32136,32148] >= 1
+ VisitarTodosArcosBidireccionales[32199,32106,32106,32199]: x[32106,32199]
+   + x[32199,32106] >= 1
+ VisitarTodosArcosBidireccionales[32199,32253,32253,32199]: x[32199,32253]
+   + x[32253,32199] >= 1
+ VisitarTodosArcosBidireccionales[32517,32430,32430,32517]: x[32430,32517]
+   + x[32517,32430] >= 1
  VisitarTodosArcosBidireccionales[32046,32107,32107,32046]: x[32107,32046]
    + x[32046,32107] >= 1
  VisitarTodosArcosBidireccionales[32657,32658,32658,32657]: x[32658,32657]
    + x[32657,32658] >= 1
- VisitarTodosArcosBidireccionales[32344,32430,32430,32344]: x[32430,32344]
-   + x[32344,32430] >= 1
- VisitarTodosArcosBidireccionales[32253,32199,32199,32253]: x[32199,32253]
-   + x[32253,32199] >= 1
- VisitarTodosArcosBidireccionales[32440,32449,32449,32440]: x[32449,32440]
-   + x[32440,32449] >= 1
- VisitarTodosArcosBidireccionales[32776,32777,32777,32776]: x[32777,32776]
-   + x[32776,32777] >= 1
- VisitarTodosArcosBidireccionales[32917,32912,32912,32917]: x[32912,32917]
-   + x[32917,32912] >= 1
- VisitarTodosArcosBidireccionales[32902,32912,32912,32902]: x[32912,32902]
-   + x[32902,32912] >= 1
- VisitarTodosArcosBidireccionales[32734,32733,32733,32734]: x[32733,32734]
-   + x[32734,32733] >= 1
- VisitarTodosArcosBidireccionales[31994,31930,31930,31994]: x[31930,31994]
-   + x[31994,31930] >= 1
- VisitarTodosArcosBidireccionales[32148,51522,51522,32148]: x[51522,32148]
-   + x[32148,51522] >= 1
+ VisitarTodosArcosBidireccionales[32106,32005,32005,32106]: x[32005,32106]
+   + x[32106,32005] >= 1
+ VisitarTodosArcosBidireccionales[32603,32517,32517,32603]: x[32517,32603]
+   + x[32603,32517] >= 1
+ VisitarTodosArcosBidireccionales[32440,51539,51539,32440]: x[51539,32440]
+   + x[32440,51539] >= 1
+ VisitarTodosArcosBidireccionales[32256,32216,32216,32256]: x[32216,32256]
+   + x[32256,32216] >= 1
+ VisitarTodosArcosBidireccionales[32434,32256,32256,32434]: x[32256,32434]
+   + x[32434,32256] >= 1
  VisitarTodosArcosBidireccionales[32460,32255,32255,32460]: x[32255,32460]
    + x[32460,32255] >= 1
- VisitarTodosArcosBidireccionales[32148,32165,32165,32148]: x[32165,32148]
-   + x[32148,32165] >= 1
  VisitarTodosArcosBidireccionales[32434,32673,32673,32434]: x[32673,32434]
    + x[32434,32673] >= 1
- VisitarTodosArcosBidireccionales[32119,32004,32004,32119]: x[32004,32119]
-   + x[32119,32004] >= 1
- VisitarTodosArcosBidireccionales[31930,31995,31995,31930]: x[31995,31930]
-   + x[31930,31995] >= 1
- VisitarTodosArcosBidireccionales[32518,32519,32519,32518]: x[32519,32518]
-   + x[32518,32519] >= 1
- VisitarTodosArcosBidireccionales[32119,32106,32106,32119]: x[32106,32119]
-   + x[32119,32106] >= 1
- VisitarTodosArcosBidireccionales[32751,32684,32684,32751]: x[32684,32751]
-   + x[32751,32684] >= 1
- VisitarTodosArcosBidireccionales[32256,32255,32255,32256]: x[32255,32256]
-   + x[32256,32255] >= 1
- ConservacionDeFlujoPuntas[31837,32256]: x[31886,31837] - x[31837,32165]
-   + x[31991,31837] - x[31837,31972] + s_i[31837] - t_i[32256] = 0
- ConservacionDeFlujoCentro[32256]: x[32255,32256] + x[32434,32256]
-   + x[32216,32256] - x[32256,32216] - x[32256,32434] - x[32256,32255]
-   - t_i[32256] = 0
- ConservacionDeFlujoCentro[32896]: x[32902,32896] + x[32885,32896]
-   + x[32734,32896] - x[32896,32902] - x[32896,32885] - x[32896,32734]
+ VisitarTodosArcosBidireccionales[32004,32119,32119,32004]: x[32119,32004]
+   + x[32004,32119] >= 1
+ VisitarTodosArcosBidireccionales[32896,32734,32734,32896]: x[32734,32896]
+   + x[32896,32734] >= 1
+ VisitarTodosArcosBidireccionales[32106,32119,32119,32106]: x[32119,32106]
+   + x[32106,32119] >= 1
+ VisitarTodosArcosBidireccionales[32270,32344,32344,32270]: x[32344,32270]
+   + x[32270,32344] >= 1
+ VisitarTodosArcosBidireccionales[32255,32199,32199,32255]: x[32199,32255]
+   + x[32255,32199] >= 1
+ VisitarTodosArcosBidireccionales[32107,32188,32188,32107]: x[32188,32107]
+   + x[32107,32188] >= 1
+ VisitarTodosArcosBidireccionales[32449,51540,51540,32449]: x[51540,32449]
+   + x[32449,51540] >= 1
+ VisitarTodosArcosBidireccionales[32603,32684,32684,32603]: x[32684,32603]
+   + x[32603,32684] >= 1
+ VisitarTodosArcosBidireccionales[32253,32199,32199,32253]: x[32199,32253]
+   + x[32253,32199] >= 1
+ VisitarTodosArcosBidireccionales[32902,32896,32896,32902]: x[32896,32902]
+   + x[32902,32896] >= 1
+ ConservacionDeFlujoPuntas[31837,32896]: - x[31837,31972] + x[31886,31837]
+   + x[31991,31837] - x[31837,32165] + s_i[31837] - t_i[32896] = 0
+ ConservacionDeFlujoCentro[32896]: - x[32896,32902] + x[32885,32896]
+   + x[32734,32896] - x[32896,32885] - x[32896,32734] + x[32902,32896]
    - t_i[32896] = 0
- ConservacionDeFlujoCentro[32004]: - x[32004,31991] - x[32004,32119]
-   + x[32005,32004] + x[32119,32004] - t_i[32004] = 0
- ConservacionDeFlujoCentro[32517]: x[32603,32517] + x[32430,32517]
-   - x[32517,32430] - x[32517,32603] - t_i[32517] = 0
- ConservacionDeFlujoCentro[32005]: - x[32005,32106] + x[32106,32005]
-   - x[32005,32004] + x[31995,32005] - t_i[32005] = 0
- ConservacionDeFlujoCentro[32518]: - x[32518,32353] + x[32253,32518]
-   + x[32619,32518] - x[32518,32733] + x[32519,32518] - x[32518,32519]
+ ConservacionDeFlujoCentro[32256]: x[32255,32256] - x[32256,32434]
+   - x[32256,32255] + x[32216,32256] - x[32256,32216] + x[32434,32256]
+   - t_i[32256] = 0
+ ConservacionDeFlujoCentro[32004]: - x[32004,31991] + x[32119,32004]
+   + x[32005,32004] - x[32004,32119] - t_i[32004] = 0
+ ConservacionDeFlujoCentro[32005]: - x[32005,32106] - x[32005,32004]
+   + x[31995,32005] + x[32106,32005] - t_i[32005] = 0
+ ConservacionDeFlujoCentro[32518]: - x[32518,32353] - x[32518,32733]
+   + x[32253,32518] + x[32519,32518] - x[32518,32519] + x[32619,32518]
    - t_i[32518] = 0
- ConservacionDeFlujoCentro[32902]: - x[32902,32896] + x[32896,32902]
-   + x[32912,32902] - x[32902,32719] + x[32719,32902] - x[32902,32912]
+ ConservacionDeFlujoCentro[32902]: x[32719,32902] - x[32902,32912]
+   + x[32896,32902] + x[32912,32902] - x[32902,32719] - x[32902,32896]
    - t_i[32902] = 0
- ConservacionDeFlujoCentro[32136]: x[32119,32136] + x[31991,32136]
-   + x[32148,32136] - x[32136,31991] - x[32136,32119] - x[32136,32148]
-   - t_i[32136] = 0
- ConservacionDeFlujoCentro[32776]: x[32912,32776] - x[32776,32912]
-   + x[32700,32776] + x[32777,32776] - x[32776,32700] - x[32776,32777]
+ ConservacionDeFlujoCentro[32776]: x[32912,32776] - x[32776,32777]
+   + x[32700,32776] + x[32777,32776] - x[32776,32912] - x[32776,32700]
    - t_i[32776] = 0
- ConservacionDeFlujoCentro[32519]: x[32676,32519] - x[32519,32676]
-   - x[32519,32501] - x[32519,32518] + x[32501,32519] + x[32518,32519]
-   - t_i[32519] = 0
- ConservacionDeFlujoCentro[32777]: - x[32777,32776] + x[32776,32777]
-   - t_i[32777] = 0
- ConservacionDeFlujoCentro[32006]: - x[32006,31947] + x[32057,32006]
+ ConservacionDeFlujoCentro[32136]: - x[32136,31991] + x[31991,32136]
+   + x[32119,32136] - x[32136,32119] + x[32148,32136] - x[32136,32148]
+   - t_i[32136] = 0
+ ConservacionDeFlujoCentro[32006]: x[32057,32006] - x[32006,31947]
    - t_i[32006] = 0
- ConservacionDeFlujoCentro[31886]: - x[31886,31837] + x[31947,31886]
-   - t_i[31886] = 0
+ ConservacionDeFlujoCentro[32519]: - x[32519,32518] + x[32501,32519]
+   + x[32518,32519] - x[32519,32676] + x[32676,32519] - x[32519,32501]
+   - t_i[32519] = 0
+ ConservacionDeFlujoCentro[32777]: x[32776,32777] - x[32777,32776]
+   - t_i[32777] = 0
+ ConservacionDeFlujoCentro[32517]: - x[32517,32603] + x[32430,32517]
+   - x[32517,32430] + x[32603,32517] - t_i[32517] = 0
  ConservacionDeFlujoCentro[32270]: x[32344,32270] + x[32188,32270]
    - x[32270,32188] - x[32270,32344] - t_i[32270] = 0
- ConservacionDeFlujoCentro[32144]: x[32211,32144] - x[32144,32057]
-   - t_i[32144] = 0
- ConservacionDeFlujoCentro[32912]: - x[32912,32917] - x[32912,32776]
-   + x[32776,32912] - x[32912,32902] + x[32917,32912] + x[32902,32912]
+ ConservacionDeFlujoCentro[31886]: x[31947,31886] - x[31886,31837]
+   - t_i[31886] = 0
+ ConservacionDeFlujoCentro[32912]: - x[32912,32776] - x[32912,32917]
+   + x[32902,32912] - x[32912,32902] + x[32917,32912] + x[32776,32912]
    - t_i[32912] = 0
- ConservacionDeFlujoCentro[32657]: x[32490,32657] + x[32658,32657]
-   + x[51553,32657] - x[32657,32490] - x[32657,51553] - x[32657,32658]
+ ConservacionDeFlujoCentro[32657]: - x[32657,32490] + x[51553,32657]
+   + x[32490,32657] - x[32657,51553] + x[32658,32657] - x[32657,32658]
    - t_i[32657] = 0
+ ConservacionDeFlujoCentro[32144]: - x[32144,32057] + x[32211,32144]
+   - t_i[32144] = 0
  ConservacionDeFlujoCentro[32658]: - x[32658,32657] + x[32657,32658]
    - t_i[32658] = 0
+ ConservacionDeFlujoCentro[32148]: - x[32148,51522] + x[32165,32148]
+   - x[32148,32165] - x[32148,32136] + x[51522,32148] + x[32136,32148]
+   - t_i[32148] = 0
+ ConservacionDeFlujoCentro[32917]: x[32912,32917] - x[32917,32826]
+   - x[32917,32912] + x[32826,32917] - t_i[32917] = 0
  ConservacionDeFlujoCentro[31892]: - x[31892,48797] + x[31905,31892]
    - t_i[31892] = 0
- ConservacionDeFlujoCentro[32917]: x[32912,32917] - x[32917,32826]
-   + x[32826,32917] - x[32917,32912] - t_i[32917] = 0
- ConservacionDeFlujoCentro[32148]: x[32165,32148] - x[32148,32136]
-   + x[51522,32148] + x[32136,32148] - x[32148,51522] - x[32148,32165]
-   - t_i[32148] = 0
- ConservacionDeFlujoCentro[48797]: x[31995,48797] + x[31892,48797]
+ ConservacionDeFlujoCentro[48797]: x[31892,48797] + x[31995,48797]
    - x[48797,31995] - t_i[48797] = 0
  ConservacionDeFlujoCentro[32288]: x[32353,32288] - x[32288,32211]
    - t_i[32288] = 0
  ConservacionDeFlujoCentro[31905]: x[31951,31905] - x[31905,31892]
    - t_i[31905] = 0
- ConservacionDeFlujoCentro[32673]: x[32700,32673] - x[32673,32700]
-   - x[32673,32434] + x[32434,32673] - t_i[32673] = 0
- ConservacionDeFlujoCentro[32676]: - x[32676,51556] - x[32676,32519]
-   + x[32677,32676] + x[51556,32676] - x[32676,32677] + x[32519,32676]
+ ConservacionDeFlujoCentro[32673]: - x[32673,32700] - x[32673,32434]
+   + x[32700,32673] + x[32434,32673] - t_i[32673] = 0
+ ConservacionDeFlujoCentro[32676]: - x[32676,51556] - x[32676,32677]
+   + x[32677,32676] + x[32519,32676] - x[32676,32519] + x[51556,32676]
    - t_i[32676] = 0
- ConservacionDeFlujoCentro[32165]: - x[32165,32148] + x[31837,32165]
-   - x[32165,32253] + x[32148,32165] - t_i[32165] = 0
- ConservacionDeFlujoCentro[32677]: - x[32677,32676] + x[32676,32677]
+ ConservacionDeFlujoCentro[32165]: - x[32165,32148] - x[32165,32253]
+   + x[32148,32165] + x[31837,32165] - t_i[32165] = 0
+ ConservacionDeFlujoCentro[32677]: x[32676,32677] - x[32677,32676]
    - t_i[32677] = 0
- ConservacionDeFlujoCentro[32684]: - x[32684,32603] + x[32603,32684]
-   - x[32684,32751] + x[32751,32684] - t_i[32684] = 0
- ConservacionDeFlujoCentro[32046]: x[31994,32046] - x[32046,31994]
-   + x[32107,32046] - x[32046,32107] - t_i[32046] = 0
- ConservacionDeFlujoCentro[32430]: - x[32430,32517] + x[32517,32430]
-   - x[32430,32344] - x[32430,32434] + x[32434,32430] + x[32344,32430]
+ ConservacionDeFlujoCentro[32684]: - x[32684,32751] + x[32751,32684]
+   - x[32684,32603] + x[32603,32684] - t_i[32684] = 0
+ ConservacionDeFlujoCentro[32430]: x[32344,32430] - x[32430,32344]
+   + x[32434,32430] - x[32430,32434] - x[32430,32517] + x[32517,32430]
    - t_i[32430] = 0
- ConservacionDeFlujoCentro[32434]: - x[32434,32256] + x[32256,32434]
-   - x[32434,32440] + x[32430,32434] + x[32673,32434] - x[32434,32430]
-   + x[32440,32434] - x[32434,32673] - t_i[32434] = 0
- ConservacionDeFlujoCentro[32440]: x[32434,32440] + x[32449,32440]
-   - x[32440,32434] - x[32440,51539] + x[51539,32440] - x[32440,52814]
-   + x[52814,32440] - x[32440,32449] - t_i[32440] = 0
- ConservacionDeFlujoCentro[32057]: x[32144,32057] - x[32057,32006]
+ ConservacionDeFlujoCentro[32046]: x[32107,32046] + x[31994,32046]
+   - x[32046,31994] - x[32046,32107] - t_i[32046] = 0
+ ConservacionDeFlujoCentro[32434]: x[32256,32434] - x[32434,32440]
+   - x[32434,32430] + x[32673,32434] + x[32440,32434] + x[32430,32434]
+   - x[32434,32256] - x[32434,32673] - t_i[32434] = 0
+ ConservacionDeFlujoCentro[32440]: x[32449,32440] + x[52814,32440]
+   - x[32440,52814] - x[32440,32449] + x[51539,32440] + x[32434,32440]
+   - x[32440,32434] - x[32440,51539] - t_i[32440] = 0
+ ConservacionDeFlujoCentro[32057]: - x[32057,32006] + x[32144,32057]
    - t_i[32057] = 0
- ConservacionDeFlujoCentro[31930]: x[31995,31930] - x[31930,31994]
-   + x[31994,31930] - x[31930,31995] - t_i[31930] = 0
- ConservacionDeFlujoCentro[31991]: x[32004,31991] - x[31991,32136]
-   + x[32136,31991] - x[31991,31837] - t_i[31991] = 0
- ConservacionDeFlujoCentro[32700]: - x[32700,32719] + x[32719,32700]
-   - x[32700,32776] - x[32700,32673] + x[32673,32700] + x[32460,32700]
-   + x[32776,32700] - x[32700,32460] - t_i[32700] = 0
- ConservacionDeFlujoCentro[32188]: - x[32188,32107] - x[32188,32270]
+ ConservacionDeFlujoCentro[32826]: - x[32826,32751] + x[32917,32826]
+   + x[32751,32826] - x[32826,32917] - t_i[32826] = 0
+ ConservacionDeFlujoCentro[31930]: x[31995,31930] - x[31930,31995]
+   - x[31930,31994] + x[31994,31930] - t_i[31930] = 0
+ ConservacionDeFlujoCentro[32700]: x[32460,32700] - x[32700,32460]
+   - x[32700,32719] + x[32719,32700] - x[32700,32776] + x[32673,32700]
+   - x[32700,32673] + x[32776,32700] - t_i[32700] = 0
+ ConservacionDeFlujoCentro[32188]: - x[32188,32270] - x[32188,32107]
    + x[32270,32188] + x[32107,32188] - t_i[32188] = 0
- ConservacionDeFlujoCentro[32826]: x[32917,32826] - x[32826,32751]
-   - x[32826,32917] + x[32751,32826] - t_i[32826] = 0
- ConservacionDeFlujoCentro[32449]: - x[32449,32460] + x[51540,32449]
-   + x[32460,32449] - x[32449,32440] - x[32449,51540] + x[32440,32449]
+ ConservacionDeFlujoCentro[32119]: - x[32119,32136] - x[32119,32004]
+   + x[32136,32119] - x[32119,32106] + x[32004,32119] + x[32106,32119]
+   - t_i[32119] = 0
+ ConservacionDeFlujoCentro[32449]: - x[32449,32440] - x[32449,32460]
+   + x[32460,32449] + x[51540,32449] + x[32440,32449] - x[32449,51540]
    - t_i[32449] = 0
- ConservacionDeFlujoCentro[51522]: - x[51522,32148] + x[32148,51522]
+ ConservacionDeFlujoCentro[51522]: x[32148,51522] - x[51522,32148]
    - t_i[51522] = 0
- ConservacionDeFlujoCentro[32709]: - x[32709,32619] + x[32885,32709]
+ ConservacionDeFlujoCentro[32709]: x[32885,32709] - x[32709,32619]
    - t_i[32709] = 0
- ConservacionDeFlujoCentro[32199]: - x[32199,32106] + x[32106,32199]
-   + x[32255,32199] - x[32199,32255] - x[32199,32253] + x[32253,32199]
+ ConservacionDeFlujoCentro[32199]: x[32106,32199] - x[32199,32255]
+   - x[32199,32106] - x[32199,32253] + x[32255,32199] + x[32253,32199]
    - t_i[32199] = 0
  ConservacionDeFlujoCentro[31947]: x[32006,31947] - x[31947,31886]
    - t_i[31947] = 0
- ConservacionDeFlujoCentro[32460]: x[32449,32460] - x[32460,32490]
-   + x[32490,32460] - x[32460,32449] - x[32460,32700] + x[32255,32460]
-   + x[32700,32460] - x[32460,32255] - t_i[32460] = 0
- ConservacionDeFlujoCentro[32718]: - x[32718,32719] + x[32734,32718]
-   + x[32501,32718] - x[32718,32501] - x[32718,32734] + x[32719,32718]
+ ConservacionDeFlujoCentro[32460]: x[32255,32460] + x[32449,32460]
+   - x[32460,32700] - x[32460,32490] + x[32700,32460] - x[32460,32449]
+   + x[32490,32460] - x[32460,32255] - t_i[32460] = 0
+ ConservacionDeFlujoCentro[32718]: x[32719,32718] - x[32718,32719]
+   - x[32718,32734] + x[32501,32718] + x[32734,32718] - x[32718,32501]
    - t_i[32718] = 0
- ConservacionDeFlujoCentro[32719]: x[32700,32719] + x[32718,32719]
-   - x[32719,32700] - x[32719,32718] + x[32902,32719] - x[32719,32902]
+ ConservacionDeFlujoCentro[32719]: - x[32719,32718] - x[32719,32902]
+   + x[32718,32719] + x[32700,32719] - x[32719,32700] + x[32902,32719]
    - t_i[32719] = 0
+ ConservacionDeFlujoCentro[52814]: - x[52814,32440] + x[32440,52814]
+   - t_i[52814] = 0
  ConservacionDeFlujoCentro[31951]: - x[31951,31905] + x[31965,31951]
    - t_i[31951] = 0
- ConservacionDeFlujoCentro[52814]: x[32440,52814] - x[52814,32440]
-   - t_i[52814] = 0
- ConservacionDeFlujoCentro[32211]: - x[32211,32144] + x[32288,32211]
-   - t_i[32211] = 0
+ ConservacionDeFlujoCentro[51539]: - x[51539,32440] + x[32440,51539]
+   - t_i[51539] = 0
  ConservacionDeFlujoCentro[51540]: - x[51540,32449] + x[32449,51540]
    - t_i[51540] = 0
- ConservacionDeFlujoCentro[51539]: x[32440,51539] - x[51539,32440]
-   - t_i[51539] = 0
- ConservacionDeFlujoCentro[32344]: - x[32344,32270] + x[32430,32344]
-   + x[32270,32344] - x[32344,32430] - t_i[32344] = 0
+ ConservacionDeFlujoCentro[32211]: x[32288,32211] - x[32211,32144]
+   - t_i[32211] = 0
+ ConservacionDeFlujoCentro[32344]: - x[32344,32430] - x[32344,32270]
+   + x[32430,32344] + x[32270,32344] - t_i[32344] = 0
  ConservacionDeFlujoCentro[32216]: - x[32216,32256] + x[32256,32216]
    - t_i[32216] = 0
- ConservacionDeFlujoCentro[32603]: - x[32603,32517] + x[32684,32603]
-   + x[32517,32603] - x[32603,32684] - t_i[32603] = 0
- ConservacionDeFlujoCentro[32734]: - x[32734,32896] - x[32734,32718]
-   + x[32718,32734] + x[32733,32734] + x[32896,32734] - x[32734,32733]
+ ConservacionDeFlujoCentro[32603]: x[32684,32603] + x[32517,32603]
+   - x[32603,32517] - x[32603,32684] - t_i[32603] = 0
+ ConservacionDeFlujoCentro[32733]: x[32734,32733] + x[32518,32733]
+   - x[32733,32734] - x[32733,32885] - t_i[32733] = 0
+ ConservacionDeFlujoCentro[32734]: - x[32734,32733] + x[32733,32734]
+   - x[32734,32896] + x[32718,32734] - x[32734,32718] + x[32896,32734]
    - t_i[32734] = 0
- ConservacionDeFlujoCentro[31965]: x[31983,31965] - x[31965,31951]
+ ConservacionDeFlujoCentro[31965]: - x[31965,31951] + x[31983,31965]
    - t_i[31965] = 0
- ConservacionDeFlujoCentro[32733]: x[32518,32733] - x[32733,32734]
-   - x[32733,32885] + x[32734,32733] - t_i[32733] = 0
  ConservacionDeFlujoCentro[32353]: x[32518,32353] - x[32353,32288]
    - t_i[32353] = 0
  ConservacionDeFlujoCentro[51553]: - x[51553,32657] + x[32657,51553]
    - t_i[51553] = 0
  ConservacionDeFlujoCentro[51556]: x[32676,51556] - x[51556,32676]
    - t_i[51556] = 0
- ConservacionDeFlujoCentro[31972]: - x[31972,31983] + x[31837,31972]
+ ConservacionDeFlujoCentro[31972]: x[31837,31972] - x[31972,31983]
    - t_i[31972] = 0
- ConservacionDeFlujoCentro[32106]: x[32005,32106] - x[32106,32119]
-   + x[32199,32106] - x[32106,32005] - x[32106,32199] + x[32119,32106]
-   - t_i[32106] = 0
- ConservacionDeFlujoCentro[32107]: x[32188,32107] - x[32107,32188]
-   - x[32107,32046] + x[32046,32107] - t_i[32107] = 0
- ConservacionDeFlujoCentro[32490]: - x[32490,32657] + x[32460,32490]
-   - x[32490,32460] + x[32501,32490] - x[32490,32501] + x[32657,32490]
+ ConservacionDeFlujoCentro[32490]: x[32501,32490] + x[32657,32490]
+   + x[32460,32490] - x[32490,32501] - x[32490,32460] - x[32490,32657]
    - t_i[32490] = 0
+ ConservacionDeFlujoCentro[32106]: x[32005,32106] - x[32106,32199]
+   + x[32119,32106] + x[32199,32106] - x[32106,32005] - x[32106,32119]
+   - t_i[32106] = 0
+ ConservacionDeFlujoCentro[32107]: - x[32107,32046] + x[32188,32107]
+   + x[32046,32107] - x[32107,32188] - t_i[32107] = 0
  ConservacionDeFlujoCentro[32619]: - x[32619,32518] + x[32709,32619]
    - t_i[32619] = 0
- ConservacionDeFlujoCentro[32751]: x[32826,32751] - x[32751,32826]
-   + x[32684,32751] - x[32751,32684] - t_i[32751] = 0
+ ConservacionDeFlujoCentro[32751]: x[32826,32751] + x[32684,32751]
+   - x[32751,32826] - x[32751,32684] - t_i[32751] = 0
  ConservacionDeFlujoCentro[31983]: - x[31983,31965] + x[31972,31983]
    - t_i[31983] = 0
- ConservacionDeFlujoCentro[32885]: - x[32885,32896] + x[32896,32885]
-   + x[32733,32885] - x[32885,32709] - t_i[32885] = 0
- ConservacionDeFlujoCentro[32501]: - x[32501,32718] + x[32718,32501]
-   - x[32501,32490] + x[32490,32501] + x[32519,32501] - x[32501,32519]
+ ConservacionDeFlujoCentro[32501]: - x[32501,32490] - x[32501,32718]
+   + x[32490,32501] + x[32718,32501] - x[32501,32519] + x[32519,32501]
    - t_i[32501] = 0
- ConservacionDeFlujoCentro[32119]: x[32106,32119] - x[32119,32136]
-   + x[32004,32119] + x[32136,32119] - x[32119,32004] - x[32119,32106]
-   - t_i[32119] = 0
+ ConservacionDeFlujoCentro[32885]: - x[32885,32896] + x[32733,32885]
+   + x[32896,32885] - x[32885,32709] - t_i[32885] = 0
+ ConservacionDeFlujoCentro[31991]: x[32004,31991] + x[32136,31991]
+   - x[31991,32136] - x[31991,31837] - t_i[31991] = 0
  ConservacionDeFlujoCentro[31994]: x[31930,31994] - x[31994,32046]
    + x[32046,31994] - x[31994,31930] - t_i[31994] = 0
- ConservacionDeFlujoCentro[31995]: - x[31995,48797] + x[48797,31995]
-   - x[31995,31930] - x[31995,32005] + x[31930,31995] - t_i[31995] = 0
+ ConservacionDeFlujoCentro[31995]: - x[31995,31930] + x[31930,31995]
+   - x[31995,48797] + x[48797,31995] - x[31995,32005] - t_i[31995] = 0
  ConservacionDeFlujoCentro[32253]: - x[32253,32518] + x[32165,32253]
    + x[32199,32253] - x[32253,32199] - t_i[32253] = 0
- ConservacionDeFlujoCentro[32255]: - x[32255,32256] - x[32255,32199]
-   - x[32255,32460] + x[32199,32255] + x[32460,32255] + x[32256,32255]
+ ConservacionDeFlujoCentro[32255]: - x[32255,32460] - x[32255,32256]
+   + x[32256,32255] + x[32199,32255] + x[32460,32255] - x[32255,32199]
    - t_i[32255] = 0
  NodoInicial: s_i[31837] = 1
- NodoTerminal: t_i[32256] + t_i[32896] + t_i[32004] + t_i[32517]
-   + t_i[32005] + t_i[32518] + t_i[32902] + t_i[32136] + t_i[32776]
-   + t_i[32519] + t_i[32777] + t_i[32006] + t_i[31886] + t_i[32270]
-   + t_i[32144] + t_i[32912] + t_i[32657] + t_i[32658] + t_i[31892]
-   + t_i[32917] + t_i[32148] + t_i[48797] + t_i[32288] + t_i[31905]
+ NodoTerminal: t_i[32896] + t_i[32256] + t_i[32004] + t_i[32005]
+   + t_i[32518] + t_i[32902] + t_i[32776] + t_i[32136] + t_i[32006]
+   + t_i[32519] + t_i[32777] + t_i[32517] + t_i[32270] + t_i[31886]
+   + t_i[32912] + t_i[32657] + t_i[32144] + t_i[32658] + t_i[32148]
+   + t_i[32917] + t_i[31892] + t_i[48797] + t_i[32288] + t_i[31905]
    + t_i[32673] + t_i[32676] + t_i[32165] + t_i[32677] + t_i[32684]
-   + t_i[32046] + t_i[32430] + t_i[32434] + t_i[32440] + t_i[32057]
-   + t_i[31930] + t_i[31991] + t_i[32700] + t_i[32188] + t_i[32826]
+   + t_i[32430] + t_i[32046] + t_i[32434] + t_i[32440] + t_i[32057]
+   + t_i[32826] + t_i[31930] + t_i[32700] + t_i[32188] + t_i[32119]
    + t_i[32449] + t_i[51522] + t_i[32709] + t_i[32199] + t_i[31947]
-   + t_i[32460] + t_i[32718] + t_i[32719] + t_i[31951] + t_i[52814]
-   + t_i[32211] + t_i[51540] + t_i[51539] + t_i[32344] + t_i[32216]
-   + t_i[32603] + t_i[31837] + t_i[32734] + t_i[31965] + t_i[32733]
-   + t_i[32353] + t_i[51553] + t_i[51556] + t_i[31972] + t_i[32106]
-   + t_i[32107] + t_i[32490] + t_i[32619] + t_i[32751] + t_i[31983]
-   + t_i[32885] + t_i[32501] + t_i[32119] + t_i[31994] + t_i[31995]
+   + t_i[32460] + t_i[32718] + t_i[32719] + t_i[52814] + t_i[31951]
+   + t_i[51539] + t_i[51540] + t_i[32211] + t_i[32344] + t_i[32216]
+   + t_i[32603] + t_i[32733] + t_i[32734] + t_i[31965] + t_i[31837]
+   + t_i[32353] + t_i[51553] + t_i[51556] + t_i[31972] + t_i[32490]
+   + t_i[32106] + t_i[32107] + t_i[32619] + t_i[32751] + t_i[31983]
+   + t_i[32501] + t_i[32885] + t_i[31991] + t_i[31994] + t_i[31995]
    + t_i[32253] + t_i[32255] = 1
 Bounds
 Binaries
- s_i[31837] t_i[32256] t_i[32896] t_i[32004] t_i[32517] t_i[32005]
- t_i[32518] t_i[32902] t_i[32136] t_i[32776] t_i[32519] t_i[32777]
- t_i[32006] t_i[31886] t_i[32270] t_i[32144] t_i[32912] t_i[32657]
- t_i[32658] t_i[31892] t_i[32917] t_i[32148] t_i[48797] t_i[32288]
+ s_i[31837] t_i[32896] t_i[32256] t_i[32004] t_i[32005] t_i[32518]
+ t_i[32902] t_i[32776] t_i[32136] t_i[32006] t_i[32519] t_i[32777]
+ t_i[32517] t_i[32270] t_i[31886] t_i[32912] t_i[32657] t_i[32144]
+ t_i[32658] t_i[32148] t_i[32917] t_i[31892] t_i[48797] t_i[32288]
  t_i[31905] t_i[32673] t_i[32676] t_i[32165] t_i[32677] t_i[32684]
- t_i[32046] t_i[32430] t_i[32434] t_i[32440] t_i[32057] t_i[31930]
- t_i[31991] t_i[32700] t_i[32188] t_i[32826] t_i[32449] t_i[51522]
+ t_i[32430] t_i[32046] t_i[32434] t_i[32440] t_i[32057] t_i[32826]
+ t_i[31930] t_i[32700] t_i[32188] t_i[32119] t_i[32449] t_i[51522]
  t_i[32709] t_i[32199] t_i[31947] t_i[32460] t_i[32718] t_i[32719]
- t_i[31951] t_i[52814] t_i[32211] t_i[51540] t_i[51539] t_i[32344]
- t_i[32216] t_i[32603] t_i[31837] t_i[32734] t_i[31965] t_i[32733]
- t_i[32353] t_i[51553] t_i[51556] t_i[31972] t_i[32106] t_i[32107]
- t_i[32490] t_i[32619] t_i[32751] t_i[31983] t_i[32885] t_i[32501]
- t_i[32119] t_i[31994] t_i[31995] t_i[32253] t_i[32255]
+ t_i[52814] t_i[31951] t_i[51539] t_i[51540] t_i[32211] t_i[32344]
+ t_i[32216] t_i[32603] t_i[32733] t_i[32734] t_i[31965] t_i[31837]
+ t_i[32353] t_i[51553] t_i[51556] t_i[31972] t_i[32490] t_i[32106]
+ t_i[32107] t_i[32619] t_i[32751] t_i[31983] t_i[32501] t_i[32885]
+ t_i[31991] t_i[31994] t_i[31995] t_i[32253] t_i[32255]
 Generals
- x[32603,32517] x[31995,48797] x[32255,32256] x[32005,32106] x[32106,32119]
- x[32676,51556] x[32518,32353] x[32902,32896] x[32700,32719] x[31886,31837]
- x[32253,32518] x[32885,32896] x[32199,32106] x[32211,32144] x[32188,32107]
- x[32353,32288] x[32119,32136] x[32912,32917] x[32734,32896] x[32106,32005]
- x[32718,32719] x[32912,32776] x[32434,32256] x[32676,32519] x[31892,48797]
- x[32449,32460] x[48797,31995] x[31995,31930] x[32004,31991] x[32490,32657]
- x[32004,32119] x[32460,32490] x[32344,32270] x[32776,32912] x[32917,32826]
- x[32896,32902] x[31930,31994] x[32734,32718] x[32490,32460] x[31951,31905]
- x[51540,32449] x[32501,32718] x[31994,32046] x[32658,32657] x[51553,32657]
- x[32912,32902] x[32718,32501] x[32718,32734] x[32719,32700] x[32826,32751]
- x[32165,32148] x[32700,32776] x[32700,32673] x[32106,32199] x[32677,32676]
- x[32188,32270] x[32270,32188] x[31983,31965] x[32460,32449] x[32673,32700]
- x[32430,32517] x[32517,32430] x[32216,32256] x[32460,32700] x[31837,32165]
- x[32619,32518] x[32518,32733] x[32255,32199] x[32256,32216] x[32501,32490]
- x[32046,31994] x[32777,32776] x[32430,32344] x[31991,32136] x[32107,32188]
- x[32256,32434] x[31905,31892] x[32684,32603] x[32719,32718] x[32434,32440]
- x[51556,32676] x[32676,32677] x[32255,32460] x[32006,31947] x[32430,32434]
- x[32005,32004] x[32288,32211] x[32709,32619] x[32673,32434] x[32144,32057]
- x[32776,32700] x[32449,32440] x[32057,32006] x[32434,32430] x[32519,32676]
- x[32490,32501] x[32519,32501] x[32733,32734] x[32902,32719] x[32657,32490]
- x[32896,32885] x[32440,32434] x[32519,32518] x[32199,32255] x[32719,32902]
- x[32148,32136] x[32826,32917] x[32136,31991] x[51522,32148] x[31995,32005]
- x[32136,32119] x[32136,32148] x[32751,32826] x[32733,32885] x[32165,32253]
- x[32501,32519] x[32517,32603] x[32440,51539] x[32603,32684] x[32449,51540]
- x[31965,31951] x[51539,32440] x[32270,32344] x[32684,32751] x[32107,32046]
- x[32440,52814] x[32896,32734] x[32700,32460] x[31991,31837] x[32885,32709]
- x[32199,32253] x[32657,51553] x[52814,32440] x[32046,32107] x[32657,32658]
- x[32344,32430] x[32253,32199] x[32440,32449] x[32776,32777] x[32917,32912]
- x[32902,32912] x[31972,31983] x[32734,32733] x[31994,31930] x[32148,51522]
- x[31947,31886] x[32460,32255] x[32148,32165] x[32434,32673] x[32119,32004]
- x[31837,31972] x[31930,31995] x[32518,32519] x[32119,32106] x[32751,32684]
- x[32256,32255]
+ x[31995,31930] x[32518,32353] x[32148,51522] x[32719,32718] x[32734,32733]
+ x[32826,32751] x[32449,32440] x[32344,32430] x[32912,32776] x[32719,32902]
+ x[32518,32733] x[31930,31995] x[32255,32460] x[32501,32490] x[32733,32734]
+ x[32449,32460] x[32657,32490] x[52814,32440] x[32460,32700] x[32912,32917]
+ x[32902,32912] x[32684,32751] x[32896,32902] x[31892,48797] x[32255,32256]
+ x[32004,31991] x[32136,31991] x[32460,32490] x[32005,32106] x[32344,32270]
+ x[32057,32006] x[32006,31947] x[31991,32136] x[32165,32148] x[32107,32046]
+ x[32885,32896] x[32188,32270] x[32676,51556] x[31930,31994] x[32188,32107]
+ x[32119,32136] x[32734,32896] x[32718,32719] x[32440,52814] x[32700,32460]
+ x[32718,32734] x[32253,32518] x[31994,32046] x[32700,32719] x[32165,32253]
+ x[32917,32826] x[32501,32718] x[32490,32501] x[32460,32449] x[32046,31994]
+ x[31951,31905] x[32519,32518] x[32353,32288] x[32256,32434] x[32119,32004]
+ x[51540,32449] x[32440,32449] x[51553,32657] x[32776,32777] x[32912,32902]
+ x[32751,32826] x[32148,32165] x[32719,32700] x[32106,32199] x[32256,32255]
+ x[32700,32776] x[32199,32255] x[32902,32719] x[32734,32718] x[32777,32776]
+ x[32676,32677] x[32718,32501] x[32751,32684] x[32430,32344] x[32501,32519]
+ x[51539,32440] x[32673,32700] x[32518,32519] x[31965,31951] x[32490,32460]
+ x[32619,32518] x[32434,32440] x[32733,32885] x[32216,32256] x[32434,32430]
+ x[31995,48797] x[32677,32676] x[32673,32434] x[32440,32434] x[32430,32434]
+ x[32144,32057] x[32917,32912] x[32826,32917] x[32136,32119] x[32519,32676]
+ x[31905,31892] x[31994,31930] x[32700,32673] x[32676,32519] x[32005,32004]
+ x[32288,32211] x[32519,32501] x[32684,32603] x[32211,32144] x[32776,32912]
+ x[48797,31995] x[31947,31886] x[31837,31972] x[32776,32700] x[32490,32657]
+ x[32517,32603] x[32119,32106] x[32657,51553] x[32270,32188] x[32896,32885]
+ x[51556,32676] x[32430,32517] x[32148,32136] x[51522,32148] x[31886,31837]
+ x[32658,32657] x[32885,32709] x[31995,32005] x[32136,32148] x[32199,32106]
+ x[31991,31837] x[32199,32253] x[32517,32430] x[32709,32619] x[32046,32107]
+ x[32657,32658] x[32106,32005] x[32603,32517] x[32440,51539] x[31983,31965]
+ x[32256,32216] x[31837,32165] x[32434,32256] x[32460,32255] x[32434,32673]
+ x[32004,32119] x[32896,32734] x[32106,32119] x[32270,32344] x[32255,32199]
+ x[32107,32188] x[32449,51540] x[32603,32684] x[31972,31983] x[32253,32199]
+ x[32902,32896]
 End
