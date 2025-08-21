@@ -237,8 +237,8 @@ try:
 
     # Crear el nombre de la carpeta y la ruta del archivo
     nombre_carpeta = "output/" + f"{nombre_instancia}"
-    ruta_archivo = os.path.join(nombre_carpeta, f"{fecha_str}.txt")
-    nombre_archivo = os.path.join(nombre_carpeta, f"{fecha_str}")
+    ruta_archivo = os.path.join(nombre_carpeta)
+    nombre_archivo = os.path.join(nombre_carpeta)
 
     # costo_recoleccion = 0
     costo_recoleccion = sum(arista[4] for arista in ARISTAS_REQ)
@@ -251,7 +251,7 @@ try:
     os.makedirs(nombre_carpeta)
 
 
-    multiplicidad_path = os.path.join(nombre_carpeta, f"{fecha_str}_multiplicidad_arcos.txt")
+    multiplicidad_path = os.path.join(nombre_carpeta, f"multiplicidad_arcos.txt")
     x_multiplicidad = { (i, j): int(round(x[i, j].X)) for (i, j) in arcos_req }
     with open(multiplicidad_path, 'w') as f_mul:
         f_mul.write("Arco_i Arco_j VecesRecorrido\n")
@@ -280,7 +280,7 @@ try:
         #archivo_salida << "Mejor costo: " << mejor_solucion.costo_camino << endl;
 
 
-    print(f"Se ha creado la carpeta {nombre_carpeta} y se ha escrito en el archivo {fecha_str}.txt")
+    # print(f"Se ha creado la carpeta {nombre_carpeta} y se ha escrito en el archivo {fecha_str}.txt")
 
 
     # show_grafico = True
