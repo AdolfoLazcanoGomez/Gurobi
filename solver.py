@@ -176,14 +176,14 @@ try:
 
     # Imprimir los valores de las variables de decisión
     for v in model.getVars():
-        print('%s %g' % (v.varName, v.x))    
+        print('%s %g' % (v.VarName, v.X))    
     
 
 
     # Parsear resultados 
-    output = [('%s %g' % (v.varName, v.x)) for v in model.getVars()]
+    output = [('%s %g' % (v.VarName, v.X)) for v in model.getVars()]
     resultados_x = [entrada.split() for entrada in output if entrada.startswith('x')]
-    vars_y_valores = [(v.varName, v.x) for v in model.getVars()]
+    vars_y_valores = [(v.VarName, v.X) for v in model.getVars()]
     nodo_inicial_raw = [var for var, valor in vars_y_valores if var.startswith('s_i') and valor == 1]
     nodo_terminal_raw = [var for var, valor in vars_y_valores if var.startswith('t_i') and valor == 1]
     nodo_inicial = int(nodo_inicial_raw[0].split('[')[1].split(']')[0])
