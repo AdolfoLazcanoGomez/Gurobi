@@ -1,9 +1,0 @@
-Nombre instancia: Renca Chiquito
-Costo: 956.7300000000001
-Longitud ruta: 22
-Nodo inicial: 32709
-Nodo terminal: 32677
-Tiempo de modelo: 10166300
-Tiempo de backtracking: 2112400
-La ruta es la siguiente: 
-[32709, 32619, 32518, 32519, 32501, 32718, 32719, 32700, 32460, 32490, 32657, 51553, 32657, 32658, 32657, 32490, 32501, 32519, 32676, 51556, 32676, 32677]
