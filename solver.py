@@ -56,7 +56,10 @@ def formatear_encabezado(nombre_instancia,comentario,cantidad_nodos, cantidad_ar
 
 #####################################################
 ################ Panel de control ###################
-carga_auto = True # True para llamar la instancia internamente, False para llamarla por parametro
+# Cuando se ejecuta desde la línea de comandos se debe
+# entregar la instancia como argumento, por lo que la carga
+# automática se desactiva.
+carga_auto = False  # True para llamar la instancia internamente, False para llamarla por parametro
 debug = False # Mostrar informacion de instancia
 tipo_formato = 'Corberan'  # 'DAT' o 'Corberan' 
 
@@ -195,134 +198,99 @@ model.addConstr(gp.quicksum(s_i[i] for i in conjunto_inicio) == 1, name="NodoIni
 # B.5 - Conjunto de termino
 model.addConstr(gp.quicksum(t_i[j] for j in conjunto_termino) == 1, name="NodoTerminal") # type: ignore
 
-try:
-    # Optimización del modelo
-    model.optimize()
-    # Datos debug de Salida 
-    model.write('csSolver.lp')
-    tiempo_modelo_ns = time.time_ns() - start_time
 
+def run_solver(ruta_instancia: str) -> None:
+    nombre_instancia = os.path.splitext(os.path.basename(ruta_instancia))[0]
+    nombre_carpeta = "output"
+    os.makedirs(nombre_carpeta, exist_ok=True)
 
-    # Imprimir los valores de las variables de decisión
-    for v in model.getVars():
-        print('%s %g' % (v.VarName, v.X))    
-    
+    try:
+        # Optimización del modelo
+        model.optimize()
+        # Datos debug de Salida
+        #model.write('csSolver.lp')
+        tiempo_modelo_ns = time.time_ns() - start_time
 
+        # Imprimir los valores de las variables de decisión
+        # for v in model.getVars():
+        #     print('%s %g' % (v.VarName, v.X))
 
-    # Parsear resultados 
-    output = [('%s %g' % (v.VarName, v.X)) for v in model.getVars()]
-    resultados_x = [entrada.split() for entrada in output if entrada.startswith('x')]
-    vars_y_valores = [(v.VarName, v.X) for v in model.getVars()]
-    nodo_inicial_raw = [var for var, valor in vars_y_valores if var.startswith('s_i') and valor == 1]
-    nodo_terminal_raw = [var for var, valor in vars_y_valores if var.startswith('t_i') and valor == 1]
-    nodo_inicial = int(nodo_inicial_raw[0].split('[')[1].split(']')[0])
-    nodo_terminal = int(nodo_terminal_raw[0].split('[')[1].split(']')[0])
+        # Parsear resultados
+        output = [('%s %g' % (v.VarName, v.X)) for v in model.getVars()]
+        resultados_x = [entrada.split() for entrada in output if entrada.startswith('x')]
+        vars_y_valores = [(v.VarName, v.X) for v in model.getVars()]
+        nodo_inicial_raw = [var for var, valor in vars_y_valores if var.startswith('s_i') and valor == 1]
+        nodo_terminal_raw = [var for var, valor in vars_y_valores if var.startswith('t_i') and valor == 1]
+        nodo_inicial = int(nodo_inicial_raw[0].split('[')[1].split(']')[0])
+        nodo_terminal = int(nodo_terminal_raw[0].split('[')[1].split(']')[0])
 
-    # Construir grafo
-    grafo = construir_grafo(ARISTAS_REQ)
-    mapa_resultados = parsear_resultados_gurobi(resultados_x)
-    largo_ruta_a_ciegas = sum(valor for clave, valor in mapa_resultados.items() if valor == 1)
-    print("El largo de la ruta a ciegas es:", largo_ruta_a_ciegas)
-    print("El tiempo del modelo fue:", tiempo_modelo_ns, "nanosegundos")
-    mapa_adyacencia = construir_mapa_adyacencia(grafo, mapa_resultados)
-    mapa_adyacencia_copia = mapa_adyacencia.copy()
+        # Construir grafo
+        grafo = construir_grafo(ARISTAS_REQ)
+        mapa_resultados = parsear_resultados_gurobi(resultados_x)
+        largo_ruta_a_ciegas = sum(valor for clave, valor in mapa_resultados.items() if valor == 1)
+        # print("El largo de la ruta a ciegas es:", largo_ruta_a_ciegas)
+        # print("El tiempo del modelo fue:", tiempo_modelo_ns, "nanosegundos")
+        mapa_adyacencia = construir_mapa_adyacencia(grafo, mapa_resultados)
+        mapa_adyacencia_copia = mapa_adyacencia.copy()
 
+        # Obtener la fecha y hora actual
+        ahora = datetime.now()
+        fecha_str = ahora.strftime('%Y-%m-%d_%H-%M-%S')
 
-    # # Backtracking - Preparacion
-    # print("Preparando backtracking")
-    # limite_paso_salida = 0 # Cantidad de veces que se puede pasar por el nodo de salida
-    # for (nodo1, nodo2), veces_recorrido in mapa_resultados.items():
-    #     if nodo2 == nodo_terminal:
-    #         limite_paso_salida += veces_recorrido
-    # mapa_adyacencia_original = copy.deepcopy(mapa_adyacencia)
-    # mejor_ruta = None
-    # mejor_mapa_adyacencia = None
-    # mejor_cantidad_arcos = float('inf') 
+        # Crear la ruta del archivo de resultados
+        ruta_archivo = os.path.join(nombre_carpeta, f"{nombre_instancia}.txt")
+        nombre_archivo = os.path.join(nombre_carpeta, f"{nombre_instancia}")
 
-    # total_arcos = sum(cantidad for sublist in mapa_adyacencia_original.values() for _, cantidad in sublist)
-    # ruta = [nodo_inicial]
+        # costo_recoleccion = 0
+        costo_recoleccion = sum(arista[4] for arista in ARISTAS_REQ)
+        #
+        costo_recorrer = (
+            sum(costos_recorrer_req[i, j] * x[i, j].X for (i, j) in arcos_req)
+            + sum(costos_recorrer_noreq[i, j] * y[i, j].X for (i, j) in arcos_noreq)
+        )
+        costo_pasada = costo_recorrer - costo_recoleccion
 
-    # # Backtracking - Ejecucion
-    # start_time = time.time_ns()
-    # relaxed_solver = False # El solver relajado permite vueltas en U
-    # ruta = backtrack(False, limite_paso_salida, mapa_adyacencia, nodo_inicial, nodo_terminal, relaxed_solver, ruta) 
-    # if ruta == None:
-    #     print("No se pudo encontrar la ruta, intentando con solver relajado (se permite vueltas en U)")
-    #     relaxed_solver = True
-    #     ruta = backtrack(False, limite_paso_salida, mapa_adyacencia, nodo_inicial, nodo_terminal, relaxed_solver, ruta)
-    # elapsed_time_ns = time.time_ns() - start_time
-    # print("El tiempo de ejecución fue:", elapsed_time_ns, "segundos")
+        multiplicidad_path = os.path.join(nombre_carpeta, f"{nombre_instancia}.txt")
+        x_multiplicidad = { (i, j): int(round(x[i, j].X)) for (i, j) in arcos_req }
+        y_multiplicidad = { (i, j): int(round(y[i, j].X)) for (i, j) in arcos_noreq }
+        with open(multiplicidad_path, 'w') as f_mul:
+            f_mul.write("Arco_i Arco_j VecesRecorrido\n")
+            f_mul.write("============================\n")
+            for (i, j) in sorted(x_multiplicidad.keys()):
+                f_mul.write(f"{i} {j} {x_multiplicidad[(i, j)]}\n")
+            for (i, j) in sorted(y_multiplicidad.keys()):
+                f_mul.write(f"{i} {j} {y_multiplicidad[(i, j)]}\n")
+        # print(f"Archivo con multiplicidad de arcos guardado en: {multiplicidad_path}")
 
-    # print("La solucion es la siguiente:")
-    # print(ruta)
-    # # Backtracking - Postprocesamiento
+        # Escribir en el archivo
+        # with open(ruta_archivo, 'w') as f:
+            # f.write("Nombre instancia: "+ ENCABEZADO['NOMBRE'] + "\n")
+            # f.write("Costo: " + str(costo_pasada) + "\n")
+            # f.write("Longitud ruta: " + str(len(ruta)) + "\n") # type: ignore␊
+            # f.write("Longitud ruta: " + str(sum(x_multiplicidad.values()) + sum(y_multiplicidad.values())) + "\n")
+            # f.write("Nodo inicial: " + str(nodo_inicial) + "\n")
+            # f.write("Nodo terminal: " + str(nodo_terminal) + "\n")
+            # f.write("Tiempo de modelo: " + str(tiempo_modelo_ns) + "\n")
+            # f.write("Tiempo de backtracking: " + str(elapsed_time_ns) + "\n")
+            # f.write("La ruta es la siguiente: " + "\n")
+            # f.write(str(ruta) + "\n")
+            # f.write("Mapa de resultados: " + str(mapa_resultados) + "\n")
 
-    # Obtener la fecha y hora actual
-    ahora = datetime.now()
-    fecha_str = ahora.strftime('%Y-%m-%d_%H-%M-%S')
+            #archivo_salida << "Costo recoleccion: " << suma_recoleccion << endl;
+            #archivo_salida << "Costo recorrer: " << suma_recorrer << endl;
+            #archivo_salida << "Costo pesos pasada: " << costo_pesos_pasada << endl;
+            #archivo_salida << "Mejor costo: " << mejor_solucion.costo_camino << endl;
 
-    # Definir el nombre de la instancia (puedes cambiarlo a lo que necesites)
-    nombre_instancia = ENCABEZADO['NOMBRE']
+        # print(f"Se ha creado la carpeta {nombre_carpeta} y se ha escrito en el archivo {fecha_str}.txt")
 
-    # Crear el nombre de la carpeta y la ruta del archivo
-    nombre_carpeta = "output/" + f"{nombre_instancia}"
-    ruta_archivo = os.path.join(nombre_carpeta)
-    nombre_archivo = os.path.join(nombre_carpeta)
+        # show_grafico = True
+        # visualizar_grafo(mapa_adyacencia_copia, ruta, show_grafico, nombre_archivo) # type: ignore
 
-    # costo_recoleccion = 0
-    costo_recoleccion = sum(arista[4] for arista in ARISTAS_REQ)
-    #
-    costo_recorrer = (
-        sum(costos_recorrer_req[i, j] * x[i, j].X for (i, j) in arcos_req)
-        + sum(costos_recorrer_noreq[i, j] * y[i, j].X for (i, j) in arcos_noreq)
-    )
-    costo_pasada = costo_recorrer - costo_recoleccion
-    
-    if os.path.exists(nombre_carpeta):
-        shutil.rmtree(nombre_carpeta)
-    os.makedirs(nombre_carpeta)
-
-
-    multiplicidad_path = os.path.join(nombre_carpeta, f"multiplicidad_arcos.txt")
-    x_multiplicidad = { (i, j): int(round(x[i, j].X)) for (i, j) in arcos_req }
-    y_multiplicidad = { (i, j): int(round(y[i, j].X)) for (i, j) in arcos_noreq }
-    with open(multiplicidad_path, 'w') as f_mul:
-        f_mul.write("Arco_i Arco_j VecesRecorrido\n")
-        f_mul.write("============================\n")
-        for (i, j) in sorted(x_multiplicidad.keys()):
-            f_mul.write(f"{i} {j} {x_multiplicidad[(i, j)]}\n")
-        for (i, j) in sorted(y_multiplicidad.keys()):
-            f_mul.write(f"{i} {j} {y_multiplicidad[(i, j)]}\n")
-    print(f"Archivo con multiplicidad de arcos guardado en: {multiplicidad_path}")
-
-    # Escribir en el archivo
-    with open(ruta_archivo, 'w') as f:
-        f.write("Nombre instancia: "+ ENCABEZADO['NOMBRE'] + "\n")
-        f.write("Costo: " + str(costo_pasada) + "\n")
-        # f.write("Longitud ruta: " + str(len(ruta)) + "\n") # type: ignore␊
-        f.write("Longitud ruta: " + str(sum(x_multiplicidad.values()) + sum(y_multiplicidad.values())) + "\n")
-        f.write("Nodo inicial: " + str(nodo_inicial) + "\n")
-        f.write("Nodo terminal: " + str(nodo_terminal) + "\n")
-        f.write("Tiempo de modelo: " + str(tiempo_modelo_ns) + "\n")
-        # f.write("Tiempo de backtracking: " + str(elapsed_time_ns) + "\n")
-        # f.write("La ruta es la siguiente: " + "\n")
-        # f.write(str(ruta) + "\n")
-        f.write("Mapa de resultados: " + str(mapa_resultados) + "\n")
-
-        #archivo_salida << "Costo recoleccion: " << suma_recoleccion << endl;
-        #archivo_salida << "Costo recorrer: " << suma_recorrer << endl;
-        #archivo_salida << "Costo pesos pasada: " << costo_pesos_pasada << endl;
-        #archivo_salida << "Mejor costo: " << mejor_solucion.costo_camino << endl;
-
-
-    # print(f"Se ha creado la carpeta {nombre_carpeta} y se ha escrito en el archivo {fecha_str}.txt")
-
-
-    # show_grafico = True
-    # visualizar_grafo(mapa_adyacencia_copia, ruta, show_grafico, nombre_archivo) # type: ignore
-
-except:
-    print("Error al optimizar el modelo")
+    except Exception as e:
+        log_path = os.path.join(nombre_carpeta, "{nombre_instancia}_error.log")
+        with open(log_path, "w") as log_file:
+            log_file.write(str(e))
+        print("Error al optimizar el modelo")
 
 
 
@@ -331,3 +299,9 @@ except:
 
 
 #LAST UPDATE
+
+if __name__ == "__main__":
+    # Se espera que la ruta a la instancia se entregue como argumento
+    # al ejecutar el script, por ejemplo:
+    #   python solver.py instances/instance_01_M.txt
+    run_solver(sys.argv[1])
