@@ -48,9 +48,13 @@ def leer_archivo(ruta):
             ARISTAS_NOREQ.add((int(nodo1), int(nodo2)))
 
         # Leer las coordenadas
-        archivo.readline()        
-        for _ in range(int(encabezado['VERTICES'])):
+        archivo.readline()              # lee "COORDENADAS_NODOS :"
+        while True:
+            pos = archivo.tell()
             linea = archivo.readline().strip()
+            if not linea or ':' in linea:  # bloque vacío o siguiente sección
+                archivo.seek(pos)
+                break
             x, y = linea.split()
             COORDENADAS.add((float(x), float(y)))      
         

@@ -24,7 +24,7 @@ class FormatoInstancia(ABC):
 class FormatoA(FormatoInstancia):
     def leer_instancia(self):
         if carga_auto:
-            nombre_archivo = "CasoRealMediano.txt"
+            nombre_archivo = "CasoRealChiquito.txt"
         else:
             nombre_archivo = sys.argv[1]
         ruta_absoluta = os.path.abspath(nombre_archivo)           
@@ -139,9 +139,13 @@ else:#arreglar pendiente
     conjunto_termino = list(NODOS)
 
 # Variables de decisión
+# x = model.addVars(arcos_req, vtype=GRB.INTEGER, lb=0, name="x")
+# s_i = model.addVars(conjunto_inicio, vtype=GRB.BINARY, name="s_i")
+# t_i = model.addVars(conjunto_termino, vtype=GRB.BINARY, name="t_i")
+# Variables de decisión
 x = model.addVars(arcos_req, vtype=GRB.INTEGER, lb=0, name="x")
-s_i = model.addVars(conjunto_inicio, vtype=GRB.BINARY, name="s_i")
-t_i = model.addVars(conjunto_termino, vtype=GRB.BINARY, name="t_i")
+s_i = {k: model.addVar(vtype=GRB.BINARY, name=f"s_i[{k}]") if k in conjunto_inicio else 0 for k in NODOS}
+t_i = {k: model.addVar(vtype=GRB.BINARY, name=f"t_i[{k}]") if k in conjunto_termino else 0 for k in NODOS}
 
 start_time = time.time_ns()
 # Función objetivo
@@ -154,11 +158,13 @@ model.addConstrs((x[i, j] >= 1 for (i, j) in arcos_req if (i, j) in arcos_req_un
 # B.2 - Visitar todos los arcos bidireccionales
 model.addConstrs((x[i, j] + x[k, m] >= 1 for ((i, j), (k, m)) in arcos_req_bidireccionales), name='VisitarTodosArcosBidireccionales')
 
-# B.3a - Conservacion de flujo
-model.addConstrs((s_i[k] + gp.quicksum(x[j,i] for (j, i) in arcos_req if i == k) == gp.quicksum(x[i, j] for i, j in arcos_req if i == k) + t_i[l] for k, l in zip(conjunto_inicio, conjunto_termino)), name="ConservacionDeFlujoPuntas") # type: ignore
-
-# B.3b - Conservacion de flujo
-model.addConstrs((gp.quicksum(x[j, i] for (j, i) in arcos_req if i == k) == gp.quicksum(x[i, j] for i, j in arcos_req if i == k) + (t_i[k] if k in conjunto_termino else 0) for k in NODOS if k not in conjunto_inicio), name="ConservacionDeFlujoCentro") # type: ignore
+# B.3 - Balance de flujo
+model.addConstrs(
+    gp.quicksum(x[i, j] for i, j in arcos_req if i == k)
+    - gp.quicksum(x[j, i] for j, i in arcos_req if i == k)
+    == s_i.get(k, 0) - t_i.get(k, 0)
+    for k in NODOS
+)
 
 # B.4 - Conjunto de inicio
 model.addConstr(gp.quicksum(s_i[i] for i in conjunto_inicio) == 1, name="NodoInicial") # type: ignore
