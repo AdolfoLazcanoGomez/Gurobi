@@ -41,11 +41,15 @@ def leer_archivo(ruta):
 
         
         # Leer las líneas de aristas no requeridas
-        archivo.readline() # leer encabezado de seccion
+        archivo.readline()  # leer encabezado de seccion
         for _ in range(int(encabezado['ARISTAS_NOREQ'])):
             linea = archivo.readline().strip()
-            nodo1, nodo2 = linea.split()
-            ARISTAS_NOREQ.add((int(nodo1), int(nodo2)))
+            tipo, nodo1, nodo2, costo_recorrer, costo_recolectar = linea.split()
+            if tipo == "uni":
+                ARISTAS_NOREQ.add((tipo, int(nodo1), int(nodo2), float(costo_recorrer), float(costo_recolectar)))
+            else:
+                ARISTAS_NOREQ.add((tipo, int(nodo1), int(nodo2), float(costo_recorrer), float(costo_recolectar)))
+                ARISTAS_NOREQ.add((tipo, int(nodo2), int(nodo1), float(costo_recorrer), float(costo_recolectar)))
 
         # Leer las coordenadas
         archivo.readline()              # lee "COORDENADAS_NODOS :"
@@ -86,7 +90,10 @@ def leer_archivo(ruta):
 
     ###########################################################################
     #Extraccion de nodos fantasma
-    nodos_fantasma_temp = ARISTAS_NOREQ
+    # nodos_fantasma_temp = ARISTAS_NOREQ
+    # numeros_unicos2 = set(numero for tupla in nodos_fantasma_temp for numero in tupla)
+    # NODOS_FANTASMA = numeros_unicos2
+    nodos_fantasma_temp = [(x[1], x[2]) for x in ARISTAS_NOREQ]
     numeros_unicos2 = set(numero for tupla in nodos_fantasma_temp for numero in tupla)
     NODOS_FANTASMA = numeros_unicos2
     ###########################################################################
