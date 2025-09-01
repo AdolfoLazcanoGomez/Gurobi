@@ -201,19 +201,19 @@ model.addConstr(gp.quicksum(t_i[j] for j in conjunto_termino) == 1, name="NodoTe
 
 def run_solver(ruta_instancia: str) -> None:
     nombre_instancia = os.path.splitext(os.path.basename(ruta_instancia))[0]
-    nombre_carpeta = os.path.join("output", nombre_instancia)
+    nombre_carpeta = "output"
     os.makedirs(nombre_carpeta, exist_ok=True)
 
     try:
         # Optimización del modelo
         model.optimize()
         # Datos debug de Salida
-        model.write('csSolver.lp')
+        #model.write('csSolver.lp')
         tiempo_modelo_ns = time.time_ns() - start_time
 
         # Imprimir los valores de las variables de decisión
-        for v in model.getVars():
-            print('%s %g' % (v.VarName, v.X))
+        # for v in model.getVars():
+        #     print('%s %g' % (v.VarName, v.X))
 
         # Parsear resultados
         output = [('%s %g' % (v.VarName, v.X)) for v in model.getVars()]
@@ -228,8 +228,8 @@ def run_solver(ruta_instancia: str) -> None:
         grafo = construir_grafo(ARISTAS_REQ)
         mapa_resultados = parsear_resultados_gurobi(resultados_x)
         largo_ruta_a_ciegas = sum(valor for clave, valor in mapa_resultados.items() if valor == 1)
-        print("El largo de la ruta a ciegas es:", largo_ruta_a_ciegas)
-        print("El tiempo del modelo fue:", tiempo_modelo_ns, "nanosegundos")
+        # print("El largo de la ruta a ciegas es:", largo_ruta_a_ciegas)
+        # print("El tiempo del modelo fue:", tiempo_modelo_ns, "nanosegundos")
         mapa_adyacencia = construir_mapa_adyacencia(grafo, mapa_resultados)
         mapa_adyacencia_copia = mapa_adyacencia.copy()
 
@@ -238,8 +238,8 @@ def run_solver(ruta_instancia: str) -> None:
         fecha_str = ahora.strftime('%Y-%m-%d_%H-%M-%S')
 
         # Crear la ruta del archivo de resultados
-        ruta_archivo = os.path.join(nombre_carpeta, f"{fecha_str}.txt")
-        nombre_archivo = os.path.join(nombre_carpeta, fecha_str)
+        ruta_archivo = os.path.join(nombre_carpeta, f"{nombre_instancia}.txt")
+        nombre_archivo = os.path.join(nombre_carpeta, f"{nombre_instancia}")
 
         # costo_recoleccion = 0
         costo_recoleccion = sum(arista[4] for arista in ARISTAS_REQ)
@@ -250,7 +250,7 @@ def run_solver(ruta_instancia: str) -> None:
         )
         costo_pasada = costo_recorrer - costo_recoleccion
 
-        multiplicidad_path = os.path.join(nombre_carpeta, f"multiplicidad_arcos.txt")
+        multiplicidad_path = os.path.join(nombre_carpeta, f"{nombre_instancia}.txt")
         x_multiplicidad = { (i, j): int(round(x[i, j].X)) for (i, j) in arcos_req }
         y_multiplicidad = { (i, j): int(round(y[i, j].X)) for (i, j) in arcos_noreq }
         with open(multiplicidad_path, 'w') as f_mul:
@@ -260,21 +260,21 @@ def run_solver(ruta_instancia: str) -> None:
                 f_mul.write(f"{i} {j} {x_multiplicidad[(i, j)]}\n")
             for (i, j) in sorted(y_multiplicidad.keys()):
                 f_mul.write(f"{i} {j} {y_multiplicidad[(i, j)]}\n")
-        print(f"Archivo con multiplicidad de arcos guardado en: {multiplicidad_path}")
+        # print(f"Archivo con multiplicidad de arcos guardado en: {multiplicidad_path}")
 
         # Escribir en el archivo
-        with open(ruta_archivo, 'w') as f:
-            f.write("Nombre instancia: "+ ENCABEZADO['NOMBRE'] + "\n")
-            f.write("Costo: " + str(costo_pasada) + "\n")
+        # with open(ruta_archivo, 'w') as f:
+            # f.write("Nombre instancia: "+ ENCABEZADO['NOMBRE'] + "\n")
+            # f.write("Costo: " + str(costo_pasada) + "\n")
             # f.write("Longitud ruta: " + str(len(ruta)) + "\n") # type: ignore␊
-            f.write("Longitud ruta: " + str(sum(x_multiplicidad.values()) + sum(y_multiplicidad.values())) + "\n")
-            f.write("Nodo inicial: " + str(nodo_inicial) + "\n")
-            f.write("Nodo terminal: " + str(nodo_terminal) + "\n")
-            f.write("Tiempo de modelo: " + str(tiempo_modelo_ns) + "\n")
+            # f.write("Longitud ruta: " + str(sum(x_multiplicidad.values()) + sum(y_multiplicidad.values())) + "\n")
+            # f.write("Nodo inicial: " + str(nodo_inicial) + "\n")
+            # f.write("Nodo terminal: " + str(nodo_terminal) + "\n")
+            # f.write("Tiempo de modelo: " + str(tiempo_modelo_ns) + "\n")
             # f.write("Tiempo de backtracking: " + str(elapsed_time_ns) + "\n")
             # f.write("La ruta es la siguiente: " + "\n")
             # f.write(str(ruta) + "\n")
-            f.write("Mapa de resultados: " + str(mapa_resultados) + "\n")
+            # f.write("Mapa de resultados: " + str(mapa_resultados) + "\n")
 
             #archivo_salida << "Costo recoleccion: " << suma_recoleccion << endl;
             #archivo_salida << "Costo recorrer: " << suma_recorrer << endl;
@@ -287,7 +287,7 @@ def run_solver(ruta_instancia: str) -> None:
         # visualizar_grafo(mapa_adyacencia_copia, ruta, show_grafico, nombre_archivo) # type: ignore
 
     except Exception as e:
-        log_path = os.path.join(nombre_carpeta, "error.log")
+        log_path = os.path.join(nombre_carpeta, "{nombre_instancia}_error.log")
         with open(log_path, "w") as log_file:
             log_file.write(str(e))
         print("Error al optimizar el modelo")
