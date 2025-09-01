@@ -111,15 +111,29 @@ model = gp.Model("ARP")  # type: ignore
 
 
 # Parámetros
-arcos_noreq = ARISTAS_NOREQ
 arcos_req_bidireccionales = []
+arcos_noreq = []
+costos_recorrer_noreq = {}
 if (tipo_formato == "Corberan"):
     arcos_req = [(x[1], x[2]) for x in ARISTAS_REQ]
     arcos_req_unidireccionales = [(x[1], x[2]) for x in ARISTAS_REQ if x[0] == "uni"]
     arcos_req_bidireccionales = [((x[1], x[2]),(x[2], x[1])) for x in ARISTAS_REQ if x[0] != "uni"]
 
     costos_recorrer_req  = {(i, j): recorrer for (_, i, j, recorrer, _) in ARISTAS_REQ}
-    costos_recolectar_req = {(i, j): recolectar for (_, i, j, _, recolectar) in ARISTAS_REQ} 
+    costos_recolectar_req = {(i, j): recolectar for (_, i, j, _, recolectar) in ARISTAS_REQ}
+
+    if ARISTAS_NOREQ:
+        ejemplo = next(iter(ARISTAS_NOREQ))
+        if len(ejemplo) >= 5:
+            arcos_noreq = [(x[1], x[2]) for x in ARISTAS_NOREQ]
+            costos_recorrer_noreq = {(i, j): recorrer for (_, i, j, recorrer, _) in ARISTAS_NOREQ}
+        elif len(ejemplo) == 3:
+            arcos_noreq = [(i, j) for (i, j, _) in ARISTAS_NOREQ]
+            costos_recorrer_noreq = {(i, j): costo for (i, j, costo) in ARISTAS_NOREQ}
+        else:
+            arcos_noreq = [(i, j) for (i, j) in ARISTAS_NOREQ]
+            costos_recorrer_noreq = {(i, j): 0 for (i, j) in arcos_noreq}
+
     conjunto_inicio = list(NODOS_INICIALES)
     if (NODOS_TERMINO.__len__() == 0): #type: ignore
         conjunto_termino = list(NODOS)
@@ -127,14 +141,16 @@ if (tipo_formato == "Corberan"):
         conjunto_termino = list(NODOS_TERMINO) #type: ignore
 
 else:#arreglar pendiente
-    arcos_req = [(x[0], x[1]) for x in ARISTAS_REQ]    
+    arcos_req = [(x[0], x[1]) for x in ARISTAS_REQ]
     arcos_req_unidireccionales = [(x[0], x[1]) for x in ARISTAS_REQ_UNIDIRECCIONALES] # type: ignore
     arcos_req_bidireccionales_temp = [(x[0], x[1]) for x in ARISTAS_REQ_BIDIRECCIONALES] # type: ignore
-    
+
     for i in range(0, len(arcos_req_bidireccionales_temp), 2):
         par = (arcos_req_bidireccionales_temp[i], arcos_req_bidireccionales_temp[i+1])
         arcos_req_bidireccionales.append(par)
     costos_recolectar_req = {(i, j): recolectar for (i, j, recolectar) in ARISTAS_REQ}
+    arcos_noreq = [(i, j) for (i, j, _) in ARISTAS_NOREQ]
+    costos_recorrer_noreq = {(i, j): costo for (i, j, costo) in ARISTAS_NOREQ}
     conjunto_inicio = list(NODOS_INICIALES)
     conjunto_termino = list(NODOS)
 
@@ -144,24 +160,31 @@ else:#arreglar pendiente
 # t_i = model.addVars(conjunto_termino, vtype=GRB.BINARY, name="t_i")
 # Variables de decisión
 x = model.addVars(arcos_req, vtype=GRB.INTEGER, lb=0, name="x")
+y = model.addVars(arcos_noreq, vtype=GRB.INTEGER, lb=0, name="y")
 s_i = {k: model.addVar(vtype=GRB.BINARY, name=f"s_i[{k}]") if k in conjunto_inicio else 0 for k in NODOS}
 t_i = {k: model.addVar(vtype=GRB.BINARY, name=f"t_i[{k}]") if k in conjunto_termino else 0 for k in NODOS}
 
 start_time = time.time_ns()
 # Función objetivo
-model.setObjective(gp.quicksum(costos_recorrer_req[i, j] * x[i, j] for (i, j) in arcos_req), GRB.MINIMIZE) # type: ignore
+model.setObjective(
+    gp.quicksum(costos_recorrer_req[i, j] * x[i, j] for (i, j) in arcos_req)
+    + gp.quicksum(costos_recorrer_noreq[i, j] * y[i, j] for (i, j) in arcos_noreq),
+    GRB.MINIMIZE,
+)  # type: ignore
 
 # Restricciones
-# B.1 - Visitar todos los arcos
+# B.1 - Visitar todos los arcos requeridos
 model.addConstrs((x[i, j] >= 1 for (i, j) in arcos_req if (i, j) in arcos_req_unidireccionales and i != j), name="VisitarTodosArcos")
 
-# B.2 - Visitar todos los arcos bidireccionales
+# B.2 - Visitar todos los arcos bidireccionales requeridos
 model.addConstrs((x[i, j] + x[k, m] >= 1 for ((i, j), (k, m)) in arcos_req_bidireccionales), name='VisitarTodosArcosBidireccionales')
 
 # B.3 - Balance de flujo
 model.addConstrs(
     gp.quicksum(x[i, j] for i, j in arcos_req if i == k)
+    + gp.quicksum(y[i, j] for i, j in arcos_noreq if i == k)
     - gp.quicksum(x[j, i] for j, i in arcos_req if i == k)
+    - gp.quicksum(y[j, i] for j, i in arcos_noreq if i == k)
     == s_i.get(k, 0) - t_i.get(k, 0)
     for k in NODOS
 )
@@ -248,8 +271,11 @@ try:
 
     # costo_recoleccion = 0
     costo_recoleccion = sum(arista[4] for arista in ARISTAS_REQ)
-    # 
-    costo_recorrer = sum(costos_recorrer_req[i, j] * x[i, j].X for (i, j) in arcos_req)
+    #
+    costo_recorrer = (
+        sum(costos_recorrer_req[i, j] * x[i, j].X for (i, j) in arcos_req)
+        + sum(costos_recorrer_noreq[i, j] * y[i, j].X for (i, j) in arcos_noreq)
+    )
     costo_pasada = costo_recorrer - costo_recoleccion
     
     if os.path.exists(nombre_carpeta):
@@ -259,19 +285,22 @@ try:
 
     multiplicidad_path = os.path.join(nombre_carpeta, f"multiplicidad_arcos.txt")
     x_multiplicidad = { (i, j): int(round(x[i, j].X)) for (i, j) in arcos_req }
+    y_multiplicidad = { (i, j): int(round(y[i, j].X)) for (i, j) in arcos_noreq }
     with open(multiplicidad_path, 'w') as f_mul:
         f_mul.write("Arco_i Arco_j VecesRecorrido\n")
         f_mul.write("============================\n")
         for (i, j) in sorted(x_multiplicidad.keys()):
             f_mul.write(f"{i} {j} {x_multiplicidad[(i, j)]}\n")
+        for (i, j) in sorted(y_multiplicidad.keys()):
+            f_mul.write(f"{i} {j} {y_multiplicidad[(i, j)]}\n")
     print(f"Archivo con multiplicidad de arcos guardado en: {multiplicidad_path}")
 
     # Escribir en el archivo
     with open(ruta_archivo, 'w') as f:
         f.write("Nombre instancia: "+ ENCABEZADO['NOMBRE'] + "\n")
         f.write("Costo: " + str(costo_pasada) + "\n")
-        # f.write("Longitud ruta: " + str(len(ruta)) + "\n") # type: ignore
-        f.write("Longitud ruta: " + str(sum(x_multiplicidad.values())) + "\n")
+        # f.write("Longitud ruta: " + str(len(ruta)) + "\n") # type: ignore␊
+        f.write("Longitud ruta: " + str(sum(x_multiplicidad.values()) + sum(y_multiplicidad.values())) + "\n")
         f.write("Nodo inicial: " + str(nodo_inicial) + "\n")
         f.write("Nodo terminal: " + str(nodo_terminal) + "\n")
         f.write("Tiempo de modelo: " + str(tiempo_modelo_ns) + "\n")
